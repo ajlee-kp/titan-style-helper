@@ -3,7 +3,7 @@ body {
 }
 
 //overrides
-div:has(div[data-area="Col1"]) {
+div:has(> div[data-area="Col1"]) {
   background-color: $backgroundColor !important;
   min-height: 100vh;
   *,

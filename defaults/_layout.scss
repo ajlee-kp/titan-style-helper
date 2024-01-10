@@ -25,10 +25,11 @@ div:has(> div[data-area="Col1"]) {
     }
   }
 
-  div[id="e6"] {
+  div[id="e6"],
+  div[id="e14"] {
     display: flex;
     flex-direction: column;
-    padding: 62px 250px;
+    padding: 62px 150px;
     @include tablet {
       padding: 50px 100px;
     }
@@ -73,11 +74,14 @@ div:has(> div[data-area="Col1"]) {
     &:has(div[id="e14"]) {
       order: 2;
       flex: 1;
+      min-height: calc(100vh - 142px);
       padding: 60px 50px;
       @include tablet {
+        min-height: calc(100vh - 120px);
         padding: 35px 35px;
       }
       @include mobile {
+        min-height: calc(100vh - 121px);
         padding: 25px 15px;
       }
     }
