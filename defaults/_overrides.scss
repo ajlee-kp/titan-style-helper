@@ -1,0 +1,46 @@
+body {
+  background-color: $backgroundColor !important;
+}
+
+//overrides
+div:has(div[data-area="Col1"]) {
+  background-color: $backgroundColor !important;
+  min-height: 100vh;
+  *,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    font-family: "Gotham", sans-serif !important;
+  }
+  > div[data-area="Col1"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100% !important;
+    max-width: min(100vw, 1440px);
+  }
+
+  .ft--Image--base {
+    @include elementReset;
+    > img {
+      height: fit-content;
+      width: fit-content;
+    }
+  }
+  div[data-type="Container"],
+  div[data-type="Container"],
+  div[data-type="Container"] > div > div {
+    @include elementReset;
+    width: 100%;
+  }
+  div[data-type="Paragraph"] {
+    @include elementReset;
+    width: fit-content;
+    a {
+      color: $mintGreen;
+    }
+  }
+}

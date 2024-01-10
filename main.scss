@@ -1,0 +1,21 @@
+// div[id="s1"] {
+//     @include mediaQuery(1280px, 1366px) {
+//     }
+//     @include mediaQuery(1000px, 1279px) {
+//     }
+//     @include mediaQuery(767px, 999px) {
+//     }
+//     @include mediaQuery(360px, 766px) {
+//     }
+//     @include mediaQuery(null, 359px) {
+//     }
+// }
+
+@import "utility/helper";
+@import "utility/variables";
+@import "utility/gotham";
+@import "defaults/overrides";
+@import "defaults/layout";
+
+//PAGES
+@import "welcome";
