@@ -56,11 +56,35 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
 
       #e83 {
       }
+      //fields container
       #e82 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
         border-radius: 5px;
         border: 1px solid black;
         background-color: white;
         padding: 22px 14px;
+        //field groups
+        #e87 {
+          display: flex;
+          flex-direction: column;
+          row-gap: 24px;
+          #e86 {
+          }
+          //field-set
+          #e88 {
+            display: flex;
+            column-gap: 11px;
+            row-gap: 18px;
+            div[data-type="Input Fields"] {
+              flex: 1;
+              fieldset {
+                width: 100%;
+              }
+            }
+          }
+        }
       }
     }
   }
