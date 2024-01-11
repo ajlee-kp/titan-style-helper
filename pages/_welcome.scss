@@ -1,0 +1,38 @@
+div[data-type="Container"]:has(div[id="e6"]) > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 48px;
+  padding: 62px min(25%, 400px);
+
+  @include tablet {
+    padding: 50px 100px;
+  }
+
+  @include mobile {
+    padding: 25px 15px;
+  }
+  //ORDERING
+  div {
+    &:has(#e20) {
+      order: 1;
+    }
+    &:has(#e21) {
+      order: 2;
+    }
+    &:has(#e22) {
+      order: 3;
+    }
+  }
+  //header
+  #e20 {
+    @include aniUnderline;
+  }
+  //description
+  #e21 {
+  }
+  //CTA-button
+  #e22 {
+    @include defaultButton;
+  }
+}

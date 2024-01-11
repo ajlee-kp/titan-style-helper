@@ -1,47 +1,60 @@
 body {
-    background-color: $backgroundColor !important;
+  margin: 0;
+  line-height: inherit;
+  background-color: $backgroundColor !important;
 }
 
 //overrides
 div:has(> div[data-area="Col1"]) {
-    background-color: $backgroundColor !important;
-    min-height: 100vh;
-    *,
-    h1,
-    h2,
-    h3,
-    h4,
-    p {
-        font-family: "Gotham", sans-serif !important;
-    }
-    > div[data-area="Col1"] {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        width: 100% !important;
-        max-width: min(100vw, 1440px);
-    }
+  background-color: $backgroundColor !important;
+  min-height: 100vh;
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    min-width: 0;
+  }
 
-    .ft--Image--base {
-        @include elementReset;
-        > img {
-            height: fit-content;
-            width: fit-content;
-        }
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a {
+    font-family: "Gotham", sans-serif !important;
+    line-height: 1.5;
+  }
+  div[data-area="Col1"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100% !important;
+    max-width: min(100vw, 1440px);
+  }
+
+  .ft--Image--base {
+    @include elementReset;
+    > img {
+      height: fit-content;
+      width: fit-content;
     }
-    div[data-type="Container"],
-    div[data-type="Container"],
-    div[data-type="Container"] > div > div {
-        @include elementReset;
-        width: 100%;
+  }
+  div[data-type="Container"] {
+    @include elementReset;
+    width: 100%;
+    & > div > div {
+      @include elementReset;
+      width: 100%;
     }
-    div[data-type="Paragraph"],
-    div[data-type="Title"] {
-        @include elementReset;
-        width: fit-content;
-    }
-    a {
-        color: $mintGreen;
-    }
+  }
+  div[data-type="Paragraph"],
+  div[data-type="Title"],
+  div[data-type="Button"] {
+    @include elementReset;
+    width: fit-content;
+  }
+  a {
+    color: $mintGreen;
+  }
 }
