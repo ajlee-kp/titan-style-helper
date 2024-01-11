@@ -1,14 +1,9 @@
 div[data-type="Container"]:has(div[id="e37"]) > div > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 48px;
+  @include defaultMainRoot;
   padding: 62px min(25%, 400px);
-
   @include tablet {
     padding: 50px 100px;
   }
-
   @include mobile {
     padding: 25px 15px;
   }

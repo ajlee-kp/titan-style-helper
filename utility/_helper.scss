@@ -38,6 +38,96 @@
   }
 }
 
+//DEFAULT CONFIGS
+@mixin defaultButton {
+  font-weight: bold;
+  padding: 15px 70px;
+  border-radius: 5px;
+  color: white;
+  background-color: $blue;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 300ms, background-color 300ms;
+  @include underTablet {
+    padding: 12px 55px;
+  }
+  @include mobile {
+    font-size: 0.9rem;
+    padding: 10px 45px;
+  }
+  &:hover,
+  &:active {
+    font-weight: bold !important;
+    padding: 15px 70px !important;
+    border-radius: 5px !important;
+    @include underTablet {
+      padding: 12px 55px !important;
+    }
+    @include mobile {
+      font-size: 0.9rem !important;
+      padding: 10px 45px !important;
+    }
+    background-color: $darkBlue !important;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+@mixin defaultMainRoot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 48px;
+  padding: 62px 200px;
+  @include tablet {
+    row-gap: 40px;
+    padding: 50px 100px;
+  }
+  @include mobile {
+    row-gap: 30px;
+    padding: 25px 15px;
+  }
+}
+
+@mixin defaultFormSectionCont {
+}
+
+//Viewports
+@mixin mediaQuery($min, $max) {
+  @if $min != null and $max == null {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else if $max != null and $min == null {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+@mixin smallerThanDesktop {
+  @include mediaQuery(null, 1279px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @include mediaQuery(767px, 999px) {
+    @content;
+  }
+}
+@mixin underTablet {
+  @include mediaQuery(null, 999px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @include mediaQuery(null, 766px) {
+    @content;
+  }
+}
+
+//ANIMATION
 @mixin aniUnderline {
   position: relative;
   display: flex;
@@ -60,64 +150,5 @@
     to {
       width: 100%;
     }
-  }
-}
-
-@mixin defaultButton {
-  font-weight: bold;
-  padding: 15px 70px;
-  border-radius: 5px;
-  color: white;
-  background-color: $blue;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: box-shadow 300ms, background-color 300ms;
-  @include underTablet {
-    padding: 12px 55px;
-  }
-  @include mobile {
-    font-size: 0.9rem;
-    padding: 10px 45px;
-  }
-  &:hover {
-    background-color: $darkBlue;
-    box-shadow: 0px 6px 6px 10px rgba(0, 0, 0, 0.25);
-  }
-}
-//Viewports
-@mixin mediaQuery($min, $max) {
-  @if $min != null and $max == null {
-    @media (min-width: $min) {
-      @content;
-    }
-  } @else if $max != null and $min == null {
-    @media (max-width: $max) {
-      @content;
-    }
-  } @else {
-    @media (min-width: $min) and (max-width: $max) {
-      @content;
-    }
-  }
-}
-@mixin smallerThanDesktop {
-  @include mediaQuery(null, 1279px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @include mediaQuery(767px, 999px) {
-    @content;
-  }
-}
-@mixin underTablet {
-  @include mediaQuery(null, 999px) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @include mediaQuery(null, 766px) {
-    @content;
   }
 }
