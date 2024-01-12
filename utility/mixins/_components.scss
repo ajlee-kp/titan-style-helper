@@ -84,37 +84,57 @@
 //Form Related
 @mixin defaultFieldsContainer {
     display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-    border-radius: 5px;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 18px;
+    border-radius: 3px;
     border: 1px solid black;
     background-color: white;
     padding: 22px 14px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    div[data-type="Container"] > div > div {
-        display: flex;
-        flex-direction: column;
-        column-gap: 11px;
-        row-gap: 18px;
-        div[data-type="Input Fields"] {
-            flex: 1;
-            fieldset {
-                width: 100%;
-            }
-        }
-        @content;
+    div[data-type="Paragraph"],
+    div[data-type="Paragraph HTML"] {
+        width: 100%;
     }
-}
-
-@mixin defaultFieldSet {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 11px;
-    row-gap: 18px;
     div[data-type="Input Fields"] {
         flex: 1;
         fieldset {
             width: 100%;
         }
+    }
+    @content;
+}
+
+@mixin containerWithID($ids...) {
+    div[data-type="Input Fields"] {
+        &:has(#{$ids}) {
+            @content;
+        }
+    }
+}
+
+@mixin oneThirdWidth {
+    width: calc(33.33% - 12px);
+    min-width: calc(33.33% - 12px);
+    @include underTablet {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@mixin halfWidth {
+    width: calc(50% - 6px);
+    min-width: calc(50% - 6px);
+    @include underTablet {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@mixin fullWidth {
+    width: 100%;
+    min-width: 100%;
+    @include underTablet {
+        min-width: 100%;
     }
 }

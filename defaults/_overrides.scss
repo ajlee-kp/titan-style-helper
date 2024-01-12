@@ -109,7 +109,23 @@ div:has(> div[data-area="Col1"]) {
             }
         }
     }
-    input:not([type="radio"], [type="checkbox"]) {
+    div:has(> input:not([type="radio"], [type="checkbox"])),
+    div:has(> textarea) {
+        border-radius: 5px;
+        background-color: $lightGrey;
+        padding: 5px 10px !important;
+        transition: background-color 300ms;
+        input,
+        textarea {
+            padding: 0px !important;
+        }
+        &:hover {
+            background-color: $grey;
+        }
+        &::after,
+        &::before {
+            display: none;
+        }
     }
     a {
         color: $mintGreen;

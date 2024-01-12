@@ -4,6 +4,9 @@ div:has(> div[data-area="Col1"]) {
     div[id="e4"],
     div[id="e69"],
     div[id="e35"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         background-color: #0d1014;
         padding: 16px 50px;
         min-height: 70px;
@@ -15,14 +18,37 @@ div:has(> div[data-area="Col1"]) {
             padding: 10px 15px;
         }
 
-        > div {
+        > div[data-type="Image"] {
             position: relative;
             width: 50px;
             @include mediaQuery(null, 999px) {
                 height: 40px;
             }
-            > img {
-                height: 100%;
+            & > div > div {
+                height: 50%;
+                img {
+                    height: 100%;
+                }
+            }
+        }
+        > div[data-type="Button"] {
+            button {
+                background-color: transparent !important;
+                letter-spacing: 0.1rem;
+                transition: letter-spacing 300ms;
+                border: unset !important;
+                font-weight: bold !important;
+                border-radius: 5px !important;
+                padding: 2px 5px !important;
+                &:hover,
+                &:active {
+                    background-color: transparent !important;
+                    padding: 2px 5px !important;
+                    border: unset !important;
+                    font-weight: bold !important;
+                    border-radius: 5px !important;
+                    letter-spacing: 0.15rem;
+                }
             }
         }
     }
@@ -84,6 +110,14 @@ div:has(> div[data-area="Col1"]) {
         &:has(div[id="e37"]) {
             > div > div {
                 height: 100%;
+            }
+            [data-type] {
+                > div,
+                > div > div {
+                    > [id]:first-child {
+                        width: 100%;
+                    }
+                }
             }
             flex: 1;
             padding: 60px 50px;

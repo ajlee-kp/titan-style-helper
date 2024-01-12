@@ -9,18 +9,9 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
     }
     //ORDERING
     div {
-        &:has(#e72) {
-            order: 1;
-        }
-        &:has(#e77) {
-            order: 2;
-        }
+        @include ordering("&:has(#e72)", "&:has(#e77)", "&:has(#e80)", "&:has(#e84)");
         &:has(#e80) {
-            order: 3;
             width: 100%;
-        }
-        &:has(#e84) {
-            order: 4;
         }
     }
     //header
@@ -41,28 +32,60 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
         flex-direction: column;
         row-gap: 36px;
 
+        //section-container ordering
+        #e81 > div {
+            @include ordering("&:has(#e83)", "&:has(#e82)");
+        }
+        #e90 > div {
+            @include ordering("&:has(#e95)", "&:has(#e91)");
+        }
         //section-container
         #e81,
         #e90 {
             display: flex;
             flex-direction: column;
             row-gap: 12px;
-            //section ordering
-            > div {
-                @include ordering("&:has(#e83)", "&:has(#e82)");
-                @include ordering("&:has(#e95)", "&:has(#e91)");
-            }
-
             #e82,
             #e91 {
-                @include defaultFieldsContainer {
-                    #e86,
-                    #e93 {
-                        width: 100%;
-                    }
-                    #e89 {
-                    }
+                @include defaultFieldsContainer;
+            }
+        }
+        #e82 {
+        }
+        #e91 {
+            & > div {
+                @include fullWidth;
+                // @include ordering("&:has(#e95)", "&:has(#e91)");
+            }
+            @include containerWithID("#e96", "#e97", "#e98") {
+                @include oneThirdWidth;
+            }
+            @include containerWithID("#e99") {
+                @include fullWidth;
+            }
+            @include containerWithID("#e100", "#e103", "#e104") {
+                @include oneThirdWidth;
+            }
+            @include containerWithID("#e105", "#e106") {
+                @include halfWidth;
+            }
+            @include containerWithID("#e107") {
+                @include fullWidth;
+                #e107 {
+                    @include oneThirdWidth;
                 }
+            }
+            //second header
+            div[data-type="Paragraph HTML"]:has(#e108),
+            div[data-type="Paragraph"]:has(#e108) {
+                margin: 30px 0px -12px !important;
+            }
+
+            @include containerWithID("#e109") {
+                @include fullWidth;
+            }
+            @include containerWithID("#e110", "#e111", "#e112") {
+                @include oneThirdWidth;
             }
         }
     }
