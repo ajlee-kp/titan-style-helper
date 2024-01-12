@@ -1,103 +1,98 @@
 //Apply custom style
 div:has(> div[data-area="Col1"]) {
-  //header
-  div[id="e4"],
-  div[id="e69"],
-  div[id="e35"] {
-    background-color: #0d1014;
-    padding: 16px 50px;
-    min-height: 70px;
-    @include extendBackgroundColor;
-    @include tablet {
-      padding: 15px 35px;
-    }
-    @include mobile {
-      padding: 10px 15px;
-    }
-
-    > div {
-      position: relative;
-      width: 50px;
-      @include mediaQuery(null, 999px) {
-        height: 40px;
-      }
-      > img {
-        height: 100%;
-      }
-    }
-  }
-
-  div[id="e6"],
-  div[id="e71"],
-  div[id="e37"] {
-    display: flex;
-    flex-direction: column;
-    > * {
-      @include elementReset;
-      width: fit-content;
-    }
-  }
-
-  //footer
-  div[id="e7"],
-  div[id="e75"],
-  div[id="e41"] {
-    display: flex;
-    justify-content: center;
-    background-color: #fbfbfb;
-    padding: 20px 50px;
-    text-align: center;
-    @include extendBackgroundColor;
-    @include tablet {
-      padding: 15px 35px;
-    }
-    @include mobile {
-      padding: 15px;
-    }
-    //footer text
-    > div {
-      position: relative;
-    }
-    div[data-type="Paragraph"] {
-      > div > div {
-        font-size: 1rem;
-        line-height: 1.2;
-        @include mobile {
-          font-size: 0.8rem;
-        }
-      }
-    }
-  }
-
-  div[data-type="Container"] {
     //header
-    &:has(div[id="e4"]),
-    &:has(div[id="e69"]),
-    &:has(div[id="e35"]) {
-      order: 1;
+    div[id="e4"],
+    div[id="e69"],
+    div[id="e35"] {
+        background-color: #0d1014;
+        padding: 16px 50px;
+        min-height: 70px;
+        @include extendBackgroundColor;
+        @include tablet {
+            padding: 15px 35px;
+        }
+        @include mobile {
+            padding: 10px 15px;
+        }
+
+        > div {
+            position: relative;
+            width: 50px;
+            @include mediaQuery(null, 999px) {
+                height: 40px;
+            }
+            > img {
+                height: 100%;
+            }
+        }
     }
-    //main
-    &:has(div[id="e6"]),
-    &:has(div[id="e71"]),
-    &:has(div[id="e37"]) {
-      > div > div {
-        height: 100%;
-      }
-      order: 2;
-      flex: 1;
-      padding: 60px 50px;
-      @include tablet {
-        padding: 35px 35px;
-      }
-      @include mobile {
-        padding: 25px 15px;
-      }
+
+    div[id="e6"],
+    div[id="e71"],
+    div[id="e37"] {
+        display: flex;
+        flex-direction: column;
+        > * {
+            @include elementReset;
+            width: fit-content;
+        }
     }
+
     //footer
-    &:has(div[id="e7"]),
-    &:has(div[id="e75"]),
-    &:has(div[id="e41"]) {
-      order: 3;
+    div[id="e7"],
+    div[id="e75"],
+    div[id="e41"] {
+        display: flex;
+        justify-content: center;
+        background-color: #fbfbfb;
+        padding: 20px 50px;
+        text-align: center;
+        @include extendBackgroundColor;
+        @include tablet {
+            padding: 15px 35px;
+        }
+        @include mobile {
+            padding: 15px;
+        }
+        //footer text
+        > div {
+            position: relative;
+        }
+        div[data-type="Paragraph"] {
+            > div > div {
+                font-size: 1rem;
+                line-height: 1.2;
+                @include mobile {
+                    font-size: 0.8rem;
+                }
+            }
+        }
     }
-  }
+
+    div[data-type="Container"] {
+        //HEADER ID --- MAIN ID --- FOOTER ID
+        //welcome
+        @include ordering("&:has(#e4)", "&:has(#e6)", "&:has(#e7)");
+        //glossary
+        @include ordering("&:has(#e35)", "&:has(#e37)", "&:has(#e41)");
+        //main-contact
+        @include ordering("&:has(#e69)", "&:has(#e71)", "&:has(#e75)");
+
+        //main
+        &:has(div[id="e6"]),
+        &:has(div[id="e71"]),
+        &:has(div[id="e37"]) {
+            > div > div {
+                height: 100%;
+            }
+            flex: 1;
+            padding: 60px 50px;
+            @include tablet {
+                padding: 35px 35px;
+            }
+            @include mobile {
+                padding: 25px 15px;
+            }
+        }
+    }
 }

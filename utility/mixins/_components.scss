@@ -81,6 +81,7 @@
     }
 }
 
+//Form Related
 @mixin defaultFieldsContainer {
     display: flex;
     flex-direction: column;
@@ -89,4 +90,31 @@
     border: 1px solid black;
     background-color: white;
     padding: 22px 14px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    div[data-type="Container"] > div > div {
+        display: flex;
+        flex-direction: column;
+        column-gap: 11px;
+        row-gap: 18px;
+        div[data-type="Input Fields"] {
+            flex: 1;
+            fieldset {
+                width: 100%;
+            }
+        }
+        @content;
+    }
+}
+
+@mixin defaultFieldSet {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 11px;
+    row-gap: 18px;
+    div[data-type="Input Fields"] {
+        flex: 1;
+        fieldset {
+            width: 100%;
+        }
+    }
 }

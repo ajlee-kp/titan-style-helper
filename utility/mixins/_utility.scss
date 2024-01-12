@@ -1,0 +1,9 @@
+@use "sass:list";
+
+@mixin ordering($identifiers...) {
+    @for $i from 1 through length($identifiers) {
+        #{list.nth($identifiers, $i)} {
+            order: $i;
+        }
+    }
+}

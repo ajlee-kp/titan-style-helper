@@ -40,43 +40,27 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
         display: flex;
         flex-direction: column;
         row-gap: 36px;
-        //section-1
-        #e81 {
+
+        //section-container
+        #e81,
+        #e90 {
             display: flex;
             flex-direction: column;
             row-gap: 12px;
             //section ordering
             > div {
-                &:has(#e83) {
-                    order: 1;
-                }
-                &:has(#e82) {
-                    order: 2;
-                }
+                @include ordering("&:has(#e83)", "&:has(#e82)");
+                @include ordering("&:has(#e95)", "&:has(#e91)");
             }
 
-            #e83 {
-            }
-            #e82 {
-                @include defaultFieldsContainer;
-                //field groups
-                #e87 {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 24px;
-                    #e86 {
+            #e82,
+            #e91 {
+                @include defaultFieldsContainer {
+                    #e86,
+                    #e93 {
+                        width: 100%;
                     }
-                    //field-set
-                    #e88 {
-                        display: flex;
-                        column-gap: 11px;
-                        row-gap: 18px;
-                        div[data-type="Input Fields"] {
-                            flex: 1;
-                            fieldset {
-                                width: 100%;
-                            }
-                        }
+                    #e89 {
                     }
                 }
             }
