@@ -81,5 +81,12 @@
     }
 }
 
-@mixin defaultFormSectionCont {
+@mixin defaultFieldsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 22px 14px;
 }

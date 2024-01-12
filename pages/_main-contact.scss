@@ -1,94 +1,88 @@
 div[data-type="Container"]:has(div[id="e71"]) > div > div {
-  @include defaultMainRoot;
-  padding: 62px min(14%, 200px);
-  @include tablet {
-    padding: 50px 100px;
-  }
-  @include mobile {
-    padding: 25px 15px;
-  }
-  //ORDERING
-  div {
-    &:has(#e72) {
-      order: 1;
+    @include defaultMainRoot;
+    padding: 62px min(14%, 200px);
+    @include tablet {
+        padding: 50px 100px;
     }
-    &:has(#e77) {
-      order: 2;
+    @include mobile {
+        padding: 25px 15px;
     }
-    &:has(#e80) {
-      order: 3;
-      width: 100%;
-    }
-    &:has(#e84) {
-      order: 4;
-    }
-  }
-  //header
-  #e72 {
-    @include aniUnderline;
-  }
-  //description-cont
-  #e77 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  //main form container
-  #e80 {
-    display: flex;
-    flex-direction: column;
-    row-gap: 36px;
-    //section-1
-    #e81 {
-      display: flex;
-      flex-direction: column;
-      row-gap: 12px;
-      //section ordering
-      > div {
-        &:has(#e83) {
-          order: 1;
+    //ORDERING
+    div {
+        &:has(#e72) {
+            order: 1;
         }
-        &:has(#e82) {
-          order: 2;
+        &:has(#e77) {
+            order: 2;
         }
-      }
-
-      #e83 {
-      }
-      //fields container
-      #e82 {
+        &:has(#e80) {
+            order: 3;
+            width: 100%;
+        }
+        &:has(#e84) {
+            order: 4;
+        }
+    }
+    //header
+    #e72 {
+        @include aniUnderline;
+    }
+    //description-cont
+    #e77 {
         display: flex;
         flex-direction: column;
-        row-gap: 50px;
-        border-radius: 5px;
-        border: 1px solid black;
-        background-color: white;
-        padding: 22px 14px;
-        //field groups
-        #e87 {
-          display: flex;
-          flex-direction: column;
-          row-gap: 24px;
-          #e86 {
-          }
-          //field-set
-          #e88 {
-            display: flex;
-            column-gap: 11px;
-            row-gap: 18px;
-            div[data-type="Input Fields"] {
-              flex: 1;
-              fieldset {
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
+        align-items: center;
+        text-align: center;
     }
-  }
-  #e84 {
-    @include defaultButton;
-  }
+
+    //main form container
+    #e80 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 36px;
+        //section-1
+        #e81 {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            //section ordering
+            > div {
+                &:has(#e83) {
+                    order: 1;
+                }
+                &:has(#e82) {
+                    order: 2;
+                }
+            }
+
+            #e83 {
+            }
+            #e82 {
+                @include defaultFieldsContainer;
+                //field groups
+                #e87 {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 24px;
+                    #e86 {
+                    }
+                    //field-set
+                    #e88 {
+                        display: flex;
+                        column-gap: 11px;
+                        row-gap: 18px;
+                        div[data-type="Input Fields"] {
+                            flex: 1;
+                            fieldset {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #e84 {
+        @include defaultButton;
+    }
 }
