@@ -1,0 +1,42 @@
+//     @include mediaQuery(1280px, 1366px)
+//     @include mediaQuery(1000px, 1279px)
+//     @include mediaQuery(767px, 999px)
+//     @include mediaQuery(360px, 766px)
+//     @include mediaQuery(null, 359px)
+
+//Viewports
+@mixin mediaQuery($min, $max) {
+    @if $min != null and $max == null {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else if $max != null and $min == null {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+}
+@mixin smallerThanDesktop {
+    @include mediaQuery(null, 1279px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @include mediaQuery(767px, 999px) {
+        @content;
+    }
+}
+@mixin underTablet {
+    @include mediaQuery(null, 999px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @include mediaQuery(null, 766px) {
+        @content;
+    }
+}
