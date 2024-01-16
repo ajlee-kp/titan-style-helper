@@ -7,3 +7,23 @@
         }
     }
 }
+
+@mixin orderingHas($identifiers...) {
+    @for $i from 1 through length($identifiers) {
+        &:has(#{list.nth($identifiers, $i)}) {
+            order: $i;
+        }
+    }
+}
+
+@mixin applyTo($identifiers...) {
+    #{$identifiers} {
+        @content;
+    }
+}
+
+@mixin applyHas($identifiers...) {
+    &:has(#{$identifiers}) {
+        @content;
+    }
+}

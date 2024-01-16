@@ -9,7 +9,8 @@
         "post": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer",
         "post:watch": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer --watch",
         "style": "npm run sass && npm run post",
-        "style:watch": "concurrently \"npm run sass:watch\" \"npm run post:watch\""
+        "style:watch": "concurrently \"npm run sass:watch\" \"npm run post:watch\"",
+        "prepare": "npm run sass && npm run post"
     },
     "keywords": [],
     "author": "",

@@ -30,14 +30,8 @@ div:has(> div[data-area="Col1"]) {
         max-width: min(100vw, 1440px);
     }
 
-    .ft--Image--base {
-        @include elementReset;
-        > img {
-            height: fit-content;
-            width: fit-content;
-        }
-    }
-    div[data-type="Container"] {
+    div[data-type="Container"],
+    div[data-type="Stepper"] {
         @include elementReset;
         width: 100%;
         & > div > div {
@@ -45,6 +39,17 @@ div:has(> div[data-area="Col1"]) {
             width: 100%;
         }
     }
+    div[data-type="Stepper"] {
+        .ft--theme--Stepper--btnRoot {
+            display: flex;
+            justify-content: space-around;
+        }
+        button {
+            @include elementReset;
+            @include defaultButton;
+        }
+    }
+
     div[data-type="Paragraph"],
     div[data-type="Title"],
     div[data-type="Button"],
@@ -129,5 +134,12 @@ div:has(> div[data-area="Col1"]) {
     }
     a {
         color: $mintGreen;
+    }
+    .ft--Image--base {
+        @include elementReset;
+        > img {
+            height: fit-content;
+            width: fit-content;
+        }
     }
 }

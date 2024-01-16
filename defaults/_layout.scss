@@ -1,9 +1,7 @@
 //Apply custom style
 div:has(> div[data-area="Col1"]) {
     //header
-    div[id="e4"],
-    div[id="e69"],
-    div[id="e35"] {
+    @include applyTo($headerIds) {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -18,17 +16,15 @@ div:has(> div[data-area="Col1"]) {
             padding: 10px 15px;
         }
 
-        > div[data-type="Image"] {
+        > div[data-type="Image"],
+        .ft--Image--base {
             position: relative;
-            width: 50px;
+            height: 50px;
             @include mediaQuery(null, 999px) {
                 height: 40px;
             }
-            & > div > div {
-                height: 50%;
-                img {
-                    height: 100%;
-                }
+            * {
+                height: 100%;
             }
         }
         > div[data-type="Button"] {
@@ -40,6 +36,9 @@ div:has(> div[data-area="Col1"]) {
                 font-weight: bold !important;
                 border-radius: 5px !important;
                 padding: 2px 5px !important;
+                @include mediaQuery(null, 999px) {
+                    font-size: 0.9rem;
+                }
                 &:hover,
                 &:active {
                     background-color: transparent !important;
@@ -48,26 +47,24 @@ div:has(> div[data-area="Col1"]) {
                     font-weight: bold !important;
                     border-radius: 5px !important;
                     letter-spacing: 0.15rem;
+                    @include mediaQuery(null, 999px) {
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
     }
-
-    div[id="e6"],
-    div[id="e71"],
-    div[id="e37"] {
+    //main
+    @include applyTo($mainIds) {
         display: flex;
         flex-direction: column;
         > * {
             @include elementReset;
-            width: fit-content;
+            width: unset;
         }
     }
-
     //footer
-    div[id="e7"],
-    div[id="e75"],
-    div[id="e41"] {
+    @include applyTo($footerIds) {
         display: flex;
         justify-content: center;
         background-color: #fbfbfb;
@@ -98,16 +95,16 @@ div:has(> div[data-area="Col1"]) {
     div[data-type="Container"] {
         //HEADER ID --- MAIN ID --- FOOTER ID
         //welcome
-        @include ordering("&:has(#e4)", "&:has(#e6)", "&:has(#e7)");
+        @include orderingHas("#e4", "#e6", "#e7");
         //glossary
-        @include ordering("&:has(#e35)", "&:has(#e37)", "&:has(#e41)");
+        @include orderingHas("#e35", "#e37", "#e41");
         //main-contact
-        @include ordering("&:has(#e69)", "&:has(#e71)", "&:has(#e75)");
+        @include orderingHas("#e69", "#e71", "#e75");
+        //injury-dmg-health
+        @include orderingHas("#e126", "#e129", "#e160");
 
         //main
-        &:has(div[id="e6"]),
-        &:has(div[id="e71"]),
-        &:has(div[id="e37"]) {
+        @include applyHas("div[id='e6']", "div[id='e71']", "div[id='e37']", "div[id='e129']") {
             > div > div {
                 height: 100%;
             }

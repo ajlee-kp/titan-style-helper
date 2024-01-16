@@ -9,7 +9,7 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
     }
     //ORDERING
     div {
-        @include ordering("&:has(#e72)", "&:has(#e77)", "&:has(#e80)", "&:has(#e84)");
+        @include orderingHas("#e72", "#e77", "#e80", "#e84");
         &:has(#e80) {
             width: 100%;
         }
@@ -32,12 +32,12 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
         flex-direction: column;
         row-gap: 36px;
 
-        //section-container ordering
+        //section-container orderingHas
         #e81 > div {
-            @include ordering("&:has(#e83)", "&:has(#e82)");
+            @include orderingHas("#e83", "#e82");
         }
         #e90 > div {
-            @include ordering("&:has(#e95)", "&:has(#e91)");
+            @include orderingHas("#e95", "#e91");
         }
         //section-container
         #e81,
@@ -55,7 +55,7 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
         #e91 {
             & > div {
                 @include fullWidth;
-                // @include ordering("&:has(#e95)", "&:has(#e91)");
+                // @include orderingHas("&:has(#e95)", "&:has(#e91)");
             }
             @include containerWithID("#e96", "#e97", "#e98") {
                 @include oneThirdWidth;

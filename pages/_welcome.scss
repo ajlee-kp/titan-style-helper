@@ -1,33 +1,25 @@
 div[data-type="Container"]:has(div[id="e6"]) > div > div {
-  @include defaultMainRoot;
-  padding: 62px min(25%, 400px);
-  @include tablet {
-    padding: 50px 100px;
-  }
-  @include mobile {
-    padding: 25px 15px;
-  }
-  //ORDERING
-  div {
-    &:has(#e20) {
-      order: 1;
+    @include defaultMainRoot;
+    padding: 62px min(25%, 400px);
+    @include tablet {
+        padding: 50px 100px;
     }
-    &:has(#e21) {
-      order: 2;
+    @include mobile {
+        padding: 25px 15px;
     }
-    &:has(#e22) {
-      order: 3;
+    //ORDERING
+    div {
+        @include orderingHas("#e20", "#e21", "#e22");
     }
-  }
-  //header
-  #e20 {
-    @include aniUnderline;
-  }
-  //description
-  #e21 {
-  }
-  //CTA-button
-  #e22 {
-    @include defaultButton;
-  }
+    //header
+    #e20 {
+        @include aniUnderline;
+    }
+    //description
+    #e21 {
+    }
+    //CTA-button
+    #e22 {
+        @include defaultButton;
+    }
 }
