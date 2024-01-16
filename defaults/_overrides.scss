@@ -43,10 +43,10 @@ div:has(> div[data-area="Col1"]) {
         .ft--theme--Stepper--btnRoot {
             display: flex;
             justify-content: space-around;
-        }
-        button {
-            @include elementReset;
-            @include defaultButton;
+            button {
+                @include elementReset;
+                @include defaultButton;
+            }
         }
     }
 

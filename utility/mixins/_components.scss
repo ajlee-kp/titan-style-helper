@@ -70,17 +70,65 @@
     flex-direction: column;
     align-items: center;
     row-gap: 48px;
-    padding: 62px 200px;
+    // padding: 62px 200px;
     @include tablet {
         row-gap: 40px;
-        padding: 50px 100px;
+        // padding: 50px 100px;
     }
     @include mobile {
         row-gap: 30px;
-        padding: 25px 15px;
+        // padding: 25px 15px;
     }
 }
 
+@mixin defaultFormSection($header, $container) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    > div {
+        @include orderingHas($header, $container);
+    }
+    #{$container} {
+        @include defaultFieldsContainer;
+        @content;
+    }
+}
+
+@mixin defaultStepperRoot($element) {
+    div[data-type="Container"]:has(#{$element}) > div > div {
+        div[data-type="Stepper"] > div > div {
+            .stack-element-separator-row {
+                display: none;
+            }
+            .ft--theme--Stepper--btnRoot {
+                margin-bottom: 62px;
+                @include tablet {
+                    margin-bottom: 50px;
+                }
+                @include mobile {
+                    margin-bottom: 36px;
+                }
+            }
+            div[role="tabpanel"] {
+                &[hidden] {
+                    display: none;
+                }
+                display: flex;
+                flex-direction: column;
+                row-gap: 36px;
+                height: 100%;
+                padding: 62px min(14%, 200px) 36px;
+                @include tablet {
+                    padding: 50px 100px 36px;
+                }
+                @include mobile {
+                    padding: 25px 15px 36px;
+                }
+            }
+            @content;
+        }
+    }
+}
 //Form Related
 @mixin defaultFieldsContainer {
     display: flex;
