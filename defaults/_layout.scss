@@ -102,9 +102,11 @@ div:has(> div[data-area="Col1"]) {
         @include orderingHas("#e69", "#e71", "#e75");
         //injury-dmg-health
         @include orderingHas("#e126", "#e129", "#e160");
+        //template
+        @include orderingHas("#e168", "#e171", "#e173");
 
         //main
-        @include applyHas("div[id='e6']", "div[id='e71']", "div[id='e37']", "div[id='e129']") {
+        @include applyHas($mainIds) {
             > div > div {
                 height: 100%;
             }
