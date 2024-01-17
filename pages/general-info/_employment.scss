@@ -47,6 +47,7 @@
                         }
                         > div:nth-last-of-type(1) {
                             @include divider;
+                            margin-top: 10px;
                         }
                     }
                 }

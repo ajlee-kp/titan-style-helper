@@ -1,0 +1,71 @@
+@mixin OtherSection {
+    //military
+    #e309 {
+        @include defaultFormSection("#e320", "#e310");
+        & > div {
+            @include fullWidth;
+        }
+        #e310 {
+            row-gap: 24px;
+            > div[data-type="Paragraph"],
+            > div[data-type="Paragraph HTML"] {
+                margin-bottom: -12px !important;
+            }
+            #e313 {
+                @include defaultInnerContainer;
+                > div {
+                    @include orderingHas("#e319", "#e317");
+                }
+                #e319 {
+                    @include divider;
+                }
+                @include inputWithID("#e317") {
+                    @include fullWidth;
+                    #e317 {
+                        @include halfWidth;
+                    }
+                }
+            }
+        }
+    }
+    #e321 {
+        @include defaultFormSection("#e328", "#e322");
+        & > div {
+            @include fullWidth;
+        }
+        #e322 {
+            row-gap: 24px;
+            > div[data-type="Paragraph"],
+            > div[data-type="Paragraph HTML"] {
+                margin-bottom: -12px !important;
+            }
+            #e325 {
+                @include defaultInnerContainer;
+                > div {
+                    @include orderingHas("#e319", "#e317");
+                }
+                #e327 {
+                    @include divider;
+                }
+                @include inputWithID("#e329") {
+                    @include fullWidth;
+                    #e329 {
+                        @include twoThirdWidth;
+                    }
+                }
+                @include inputWithID("#e330") {
+                    @include fullWidth;
+                }
+                @include inputWithID("#e331", "#e332") {
+                    @include halfWidth;
+                }
+                @include inputWithID("#e333") {
+                    @include fullWidth;
+                    #e333 {
+                        @include halfWidth;
+                    }
+                }
+            }
+        }
+    }
+}

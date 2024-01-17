@@ -189,6 +189,13 @@
         @content;
     }
 }
+@mixin defaultInnerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 12px;
+    row-gap: 10px;
+}
 @mixin repeatContainerButtons($addId, $removeId) {
     display: flex;
     column-gap: 25px;
@@ -240,6 +247,15 @@
 @mixin oneThirdWidth {
     width: calc(33.33% - 12px);
     min-width: calc(33.33% - 12px);
+    @include underTablet {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@mixin twoThirdWidth {
+    width: calc(66.66% - 6px);
+    min-width: calc(66.66% - 6px);
     @include underTablet {
         width: 100%;
         min-width: 100%;
