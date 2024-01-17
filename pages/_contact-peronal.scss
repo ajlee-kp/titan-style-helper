@@ -57,19 +57,19 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
                 @include fullWidth;
                 // @include orderingHas("&:has(#e95)", "&:has(#e91)");
             }
-            @include containerWithID("#e96", "#e97", "#e98") {
+            @include inputWithID("#e96", "#e97", "#e98") {
                 @include oneThirdWidth;
             }
-            @include containerWithID("#e99") {
+            @include inputWithID("#e99") {
                 @include fullWidth;
             }
-            @include containerWithID("#e100", "#e103", "#e104") {
+            @include inputWithID("#e100", "#e103", "#e104") {
                 @include oneThirdWidth;
             }
-            @include containerWithID("#e105", "#e106") {
+            @include inputWithID("#e105", "#e106") {
                 @include halfWidth;
             }
-            @include containerWithID("#e107") {
+            @include inputWithID("#e107") {
                 @include fullWidth;
                 #e107 {
                     @include oneThirdWidth;
@@ -81,10 +81,10 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
                 margin: 30px 0px -12px !important;
             }
 
-            @include containerWithID("#e109") {
+            @include inputWithID("#e109") {
                 @include fullWidth;
             }
-            @include containerWithID("#e110", "#e111", "#e112") {
+            @include inputWithID("#e110", "#e111", "#e112") {
                 @include oneThirdWidth;
             }
         }

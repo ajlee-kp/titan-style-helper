@@ -1,3 +1,5 @@
+@use "sass:list";
+
 @mixin elementReset {
     position: relative;
     border: unset;
@@ -32,11 +34,16 @@
     }
 }
 
+@mixin divider {
+    height: 1px;
+    background-color: $grey !important;
+}
 //DEFAULT CONFIGS
 @mixin defaultButton {
     font-weight: bold;
     padding: 15px 60px;
     border-radius: 5px;
+    border: unset;
     color: white;
     background-color: $blue;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
@@ -53,6 +60,7 @@
         font-weight: bold !important;
         padding: 15px 60px !important;
         border-radius: 5px !important;
+        border: unset !important;
         @include underTablet {
             padding: 12px 50px !important;
         }
@@ -81,19 +89,7 @@
     }
 }
 
-@mixin defaultFormSection($header, $container) {
-    display: flex;
-    flex-direction: column;
-    row-gap: 12px;
-    > div {
-        @include orderingHas($header, $container);
-    }
-    #{$container} {
-        @include defaultFieldsContainer;
-        @content;
-    }
-}
-
+//Form Related
 @mixin defaultStepperRoot($element) {
     div[data-type="Container"]:has(#{$element}) > div > div {
         div[data-type="Stepper"] > div > div {
@@ -115,7 +111,7 @@
                 }
                 display: flex;
                 flex-direction: column;
-                row-gap: 36px;
+                row-gap: 12px;
                 height: 100%;
                 padding: 62px min(14%, 200px) 36px;
                 @include tablet {
@@ -124,12 +120,32 @@
                 @include mobile {
                     padding: 25px 15px 36px;
                 }
+                .ft--elem--show {
+                    display: flex !important;
+                }
             }
             @content;
         }
     }
 }
-//Form Related
+@mixin defaultFormSection($ids...) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    .ft--elem--show {
+        display: flex !important;
+    }
+    > div {
+        @include orderingHas($ids...);
+    }
+    @for $i from 1 through length($ids) {
+        @if $i != 1 {
+            #{list.nth($ids, $i)} {
+                @include defaultFieldsContainer;
+            }
+        }
+    }
+}
 @mixin defaultFieldsContainer {
     display: flex;
     flex-wrap: wrap;
@@ -140,6 +156,9 @@
     background-color: white;
     padding: 22px 14px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    .ft--elem--show {
+        display: flex !important;
+    }
     div[data-type="Paragraph"],
     div[data-type="Paragraph HTML"] {
         width: 100%;
@@ -152,8 +171,65 @@
     }
     @content;
 }
-
-@mixin containerWithID($ids...) {
+@mixin defaultRepeatContainer {
+    div[data-type="Repeat Auto Fit"] {
+        & > div > div {
+            overflow-y: hidden !important;
+        }
+        div[data-index] {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            column-gap: 12px;
+            row-gap: 10px;
+            .ft--elem--show {
+                display: flex !important;
+            }
+        }
+        @content;
+    }
+}
+@mixin repeatContainerButtons($addId, $removeId) {
+    display: flex;
+    column-gap: 25px;
+    button {
+        @include defaultButton;
+        padding: 8px 30px;
+        font-size: 0.9rem;
+        @include underTablet {
+            padding: 8px 20px;
+        }
+        @include mobile {
+            padding: 8px 15px;
+        }
+        &:hover,
+        &:active {
+            font-size: 0.9rem !important;
+            padding: 8px 30px !important;
+            @include underTablet {
+                padding: 8px 20px !important;
+            }
+            @include mobile {
+                padding: 8px 15px !important;
+            }
+        }
+        &#{$addId} {
+            background-color: $mintGreen !important;
+            &:hover,
+            &:active {
+                background-color: #199c77 !important;
+            }
+        }
+        &#{$removeId} {
+            background-color: $warn !important;
+            &:hover,
+            &:active {
+                background-color: #b61414 !important;
+            }
+        }
+    }
+}
+@mixin inputWithID($ids...) {
     div[data-type="Input Fields"] {
         &:has(#{$ids}) {
             @content;

@@ -1,0 +1,107 @@
+@mixin GeneralSection {
+    #e175 {
+        @include defaultFormSection("#e179", "#e176");
+    }
+    #e180 {
+        @include defaultFormSection("#e198", "#e181", "#e199", "#e221");
+        & > div {
+            @include fullWidth;
+        }
+        //plaintiff-fields
+        #e181 {
+            @include inputWithID("#e183", "#e184", "#e185") {
+                @include oneThirdWidth;
+            }
+            @include inputWithID("#e186") {
+                @include fullWidth;
+            }
+            @include inputWithID("#e187", "#e188", "#e189") {
+                @include oneThirdWidth;
+            }
+            @include inputWithID("#e190", "#e191") {
+                @include halfWidth;
+            }
+            @include inputWithID("#e192") {
+                @include fullWidth;
+                #e192 {
+                    @include oneThirdWidth;
+                }
+            }
+            //second header
+            div[data-type="Paragraph HTML"]:has(#e193),
+            div[data-type="Paragraph"]:has(#e193) {
+                margin: 30px 0px -12px !important;
+            }
+
+            @include inputWithID("#e194") {
+                @include fullWidth;
+            }
+            @include inputWithID("#e195", "#e196", "#e197") {
+                @include oneThirdWidth;
+            }
+        }
+        //representative-fields
+        #e199 {
+            @include inputWithID("#e201", "#e202", "#e203") {
+                @include oneThirdWidth;
+            }
+            @include inputWithID("#e204") {
+                @include fullWidth;
+            }
+            @include inputWithID("#e205", "#e216") {
+                @include halfWidth;
+            }
+            @include inputWithID("#e217") {
+                @include fullWidth;
+            }
+            @include inputWithID("#e218", "#e219") {
+                @include halfWidth;
+            }
+            @include inputWithID("#e220") {
+                @include fullWidth;
+            }
+        }
+        //address-fields
+        #e221 {
+            > div {
+                @include orderingHas("#e237", "#e235");
+            }
+            //repeat continaer contaienr
+            #e235 {
+                display: flex;
+                flex-direction: column;
+                row-gap: 25px;
+                //repeat container #e235
+                @include defaultRepeatContainer {
+                    > div > div {
+                        row-gap: 20px;
+                    }
+                    div[data-index] {
+                        .stack-element-separator-row {
+                            display: none;
+                        }
+                        > div[data-type="Input Fields"] {
+                            &:nth-of-type(1) {
+                                @include fullWidth;
+                            }
+                            &:nth-of-type(2) {
+                                @include halfWidth;
+                            }
+                            &:nth-of-type(3) {
+                                @include halfWidth;
+                            }
+                        }
+                        > div:nth-last-of-type(1) {
+                            height: 1px;
+                            background-color: $grey !important;
+                        }
+                    }
+                }
+                //repeat button container
+                #e245 {
+                    @include repeatContainerButtons("#e244", "#e246");
+                }
+            }
+        }
+    }
+}

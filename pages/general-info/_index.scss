@@ -1,0 +1,9 @@
+@import "general";
+@import "employment";
+
+@include defaultStepperRoot('div[id="e172"]') {
+    div[role="tabpanel"] {
+        @include GeneralSection;
+        @include EmploymentSection;
+    }
+}

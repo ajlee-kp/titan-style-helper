@@ -1,0 +1,85 @@
+@mixin EmploymentSection {
+    #e248 {
+        @include defaultFormSection("#e252", "#e264");
+        //employment fields
+        & > div {
+            @include fullWidth;
+        }
+        #e264 {
+            row-gap: 24px;
+            > div[data-type="Paragraph"],
+            > div[data-type="Paragraph HTML"] {
+                margin-bottom: -12px !important;
+            }
+            > div {
+                @include orderingHas("#e275", "#e276", "#e265", "#e287", "#e286", "#e288");
+            }
+            @include inputWithID("#e276") {
+                @include fullWidth;
+            }
+            #e265 {
+                display: flex;
+                flex-direction: column;
+                row-gap: 12px;
+                @include fullWidth;
+                > div {
+                    @include orderingHas("#e292", "#e274", "#e266", "#e271");
+                }
+                #e292 {
+                    @include divider;
+                }
+                @include defaultRepeatContainer {
+                    > div > div {
+                        row-gap: 20px;
+                    }
+                    div[data-index] {
+                        .stack-element-separator-row {
+                            display: none;
+                        }
+
+                        > div[data-type="Input Fields"] {
+                            @include halfWidth;
+                            &:nth-of-type(1),
+                            &:nth-of-type(2),
+                            &:nth-of-type(3) {
+                                @include fullWidth;
+                            }
+                        }
+                        > div:nth-last-of-type(1) {
+                            @include divider;
+                        }
+                    }
+                }
+                //repeat button container
+                #e271 {
+                    @include repeatContainerButtons("#e272", "#e273");
+                }
+            }
+            @include inputWithID("#e286") {
+                @include fullWidth;
+            }
+            #e288 {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                column-gap: 12px;
+                row-gap: 10px;
+                > div {
+                    @include orderingHas("#e293", "#e290", "#e289");
+                }
+                #e293 {
+                    @include divider;
+                }
+                @include inputWithID("#e290") {
+                    @include fullWidth;
+                }
+                @include inputWithID("#e289") {
+                    @include fullWidth;
+                    #e289 {
+                        @include halfWidth;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -31,15 +31,43 @@ div:has(> div[data-area="Col1"]) {
     }
 
     div[data-type="Container"],
-    div[data-type="Stepper"] {
+    div[data-type="Stepper"],
+    div[data-type="Repeat Auto Fit"] {
         @include elementReset;
         width: 100%;
+        & > div,
         & > div > div {
             @include elementReset;
             width: 100%;
         }
     }
+
     div[data-type="Stepper"] {
+        .ft--theme--Stepper--panelRoot {
+            @include underTablet {
+                > div {
+                    span {
+                        padding: 0px;
+                        text-align: center;
+                    }
+                    > span {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                }
+            }
+            @include mobile {
+                > div {
+                    span {
+                        > span:nth-of-type(2) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
         .ft--theme--Stepper--btnRoot {
             display: flex;
             justify-content: space-around;
@@ -75,7 +103,7 @@ div:has(> div[data-area="Col1"]) {
             }
         }
         div {
-            row-gap: 12px !important;
+            row-gap: 8px !important;
         }
     }
     input[type="radio"],
