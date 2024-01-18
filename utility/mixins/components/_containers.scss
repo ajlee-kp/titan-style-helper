@@ -14,40 +14,42 @@
 }
 
 @mixin rootStepper($element) {
-    div[data-type="Container"]:has(#{$element}) > div > div {
-        div[data-type="Stepper"] > div > div {
-            .stack-element-separator-row {
-                display: none;
-            }
-            .ft--theme--Stepper--btnRoot {
-                margin-bottom: 62px;
-                @include tablet {
-                    margin-bottom: 50px;
-                }
-                @include mobile {
-                    margin-bottom: 36px;
-                }
-            }
-            div[role="tabpanel"] {
-                &[hidden] {
+    div[data-type="Container"] {
+        &:has(#{$element}) > div > div {
+            div[data-type="Stepper"] > div > div {
+                .stack-element-separator-row {
                     display: none;
                 }
-                display: flex;
-                flex-direction: column;
-                row-gap: 12px;
-                height: 100%;
-                padding: 62px min(14%, 200px) 36px;
-                @include tablet {
-                    padding: 50px 100px 36px;
+                .ft--theme--Stepper--btnRoot {
+                    margin-bottom: 62px;
+                    @include tablet {
+                        margin-bottom: 50px;
+                    }
+                    @include mobile {
+                        margin-bottom: 36px;
+                    }
                 }
-                @include mobile {
-                    padding: 25px 15px 36px;
-                }
-                .ft--elem--show {
-                    display: flex !important;
+                div[role="tabpanel"] {
+                    &[hidden] {
+                        display: none;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 12px;
+                    height: 100%;
+                    padding: 62px min(14%, 200px) 36px;
+                    @include tablet {
+                        padding: 50px 100px 36px;
+                    }
+                    @include mobile {
+                        padding: 25px 15px 36px;
+                    }
+                    .ft--elem--show {
+                        display: flex !important;
+                    }
+                    @content;
                 }
             }
-            @content;
         }
     }
 }
@@ -61,6 +63,7 @@
     }
     > div {
         @include orderingHas($ids...);
+        @include fullWidth;
     }
     @for $i from 1 through length($ids) {
         @if $i != 1 {
@@ -75,7 +78,7 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 12px;
-    row-gap: 18px;
+    row-gap: 24px;
     border-radius: 3px;
     border: 1px solid black;
     background-color: white;
@@ -83,6 +86,10 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     .ft--elem--show {
         display: flex !important;
+    }
+    > div[data-type="Paragraph"],
+    > div[data-type="Paragraph HTML"] {
+        margin-bottom: -12px !important;
     }
     div[data-type="Paragraph"],
     div[data-type="Paragraph HTML"] {
@@ -95,6 +102,23 @@
         }
     }
     @content;
+}
+
+@mixin conditionalContainer($id, $conditionalContId) {
+    #{$id} {
+        @include innerContainer;
+        column-gap: 12px;
+        row-gap: 24px;
+        > div[data-type="Paragraph"],
+        > div[data-type="Paragraph HTML"] {
+            margin-bottom: -12px !important;
+        }
+        #{$conditionalContId} {
+            padding-top: 12px;
+            border-top: 1px solid $grey !important;
+        }
+        @content;
+    }
 }
 
 @mixin innerContainer {
@@ -156,13 +180,26 @@
     div[data-type="Repeat Auto Fit"] {
         & > div > div {
             overflow-y: hidden !important;
+            row-gap: 20px;
         }
         div[data-index] {
             @include innerContainer;
+            .stack-element-separator-row {
+                display: none;
+            }
             .ft--elem--show {
                 display: flex !important;
             }
+            @content;
         }
+    }
+}
+
+@mixin repeaterParentContainer($id) {
+    #{$id} {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
         @content;
     }
 }

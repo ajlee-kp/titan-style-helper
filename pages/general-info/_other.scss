@@ -1,16 +1,8 @@
-@mixin OtherSection {
+@mixin OtherStep {
     //military
     #e309 {
         @include formSection("#e320", "#e310");
-        & > div {
-            @include fullWidth;
-        }
         #e310 {
-            row-gap: 24px;
-            > div[data-type="Paragraph"],
-            > div[data-type="Paragraph HTML"] {
-                margin-bottom: -12px !important;
-            }
             #e313 {
                 @include innerContainer;
                 > div {
@@ -34,11 +26,6 @@
             @include fullWidth;
         }
         #e322 {
-            row-gap: 24px;
-            > div[data-type="Paragraph"],
-            > div[data-type="Paragraph HTML"] {
-                margin-bottom: -12px !important;
-            }
             #e325 {
                 @include innerContainer;
                 > div {

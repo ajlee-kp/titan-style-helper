@@ -92,6 +92,7 @@ div:has(> div[data-area="Col1"]) {
         @include elementReset;
         width: 100%;
     }
+
     fieldset {
         label {
             display: flex;
@@ -106,6 +107,7 @@ div:has(> div[data-area="Col1"]) {
             row-gap: 8px !important;
         }
     }
+
     input[type="radio"],
     input[type="checkbox"] {
         + div {

@@ -1,0 +1,126 @@
+@mixin InjuriesStep {
+    #e334 {
+        @include formSection("#e335", "#e348");
+        #e348 {
+            > div {
+                @include orderingHas(
+                    "#e358",
+                    "#e349",
+                    "#e392",
+                    "#e394",
+                    "#e395",
+                    "#e396",
+                    "#e403",
+                    "#e404",
+                    "#e411",
+                    "#e412",
+                    "#e418",
+                    "#e419"
+                );
+            }
+            @include dividers("#e392", "#e395", "#e403", "#e411", "#e418");
+            @include repeaterParentContainer("#e349") {
+                display: flex;
+                flex-direction: column;
+                row-gap: 25px;
+                //repeat container #e350
+                @include repeaterContainer {
+                    > div {
+                        &:nth-of-type(1),
+                        &:nth-of-type(3),
+                        &:nth-of-type(9),
+                        &:nth-of-type(11) {
+                            @include fullWidth;
+                        }
+                        &:nth-of-type(5),
+                        &:nth-of-type(7) {
+                            @include halfWidth;
+                        }
+                        &:nth-last-of-type(1) {
+                            @include divider;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+                #e355 {
+                    @include repeaterButtonContainer("#e356", "#e357");
+                }
+            }
+
+            @include inputWithID("#e386") {
+                @include fullWidth;
+            }
+
+            @include conditionalContainer("#e394", "#e387") {
+                > div {
+                    @include orderingHas("#e384", "#e386", "#e387");
+                }
+                #e387 {
+                    > div {
+                        @include orderingHas("#e390", "#e391");
+                    }
+                    @include innerContainer;
+                    @include inputWithID("#e391") {
+                        @include fullWidth;
+                    }
+                }
+            }
+            @include conditionalContainer("#e396", "#e399") {
+                > div {
+                    @include orderingHas("#e397", "#e398", "#e399");
+                }
+                #e399 {
+                    > div {
+                        @include orderingHas("#e400", "#e401");
+                    }
+                    @include innerContainer;
+                    @include inputWithID("#e401") {
+                        @include fullWidth;
+                    }
+                }
+            }
+            @include conditionalContainer("#e404", "#e407") {
+                > div {
+                    @include orderingHas("#e405", "#e406", "#e407");
+                }
+                #e407 {
+                    > div {
+                        @include orderingHas("#e408", "#e409");
+                    }
+                    @include innerContainer;
+                    @include inputWithID("#e409") {
+                        @include fullWidth;
+                    }
+                }
+            }
+            @include conditionalContainer("#e412", "#e415") {
+                > div {
+                    @include orderingHas("#e413", "#e414", "#e415");
+                }
+                #e415 {
+                    > div {
+                        @include orderingHas("#e416", "#e417");
+                    }
+                    @include innerContainer;
+                    @include inputWithID("#e417") {
+                        @include fullWidth;
+                    }
+                }
+            }
+            @include conditionalContainer("#e419", "#e422") {
+                > div {
+                    @include orderingHas("#e420", "#e421", "#e422");
+                }
+                #e422 {
+                    > div {
+                        @include orderingHas("#e423", "#e424");
+                    }
+                    @include innerContainer;
+                    @include inputWithID("#e424") {
+                        @include fullWidth;
+                    }
+                }
+            }
+        }
+    }
+}

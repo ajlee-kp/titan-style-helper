@@ -1,16 +1,8 @@
-@mixin EmploymentSection {
+@mixin EmploymentStep {
     #e248 {
         @include formSection("#e252", "#e264");
         //employment fields
-        & > div {
-            @include fullWidth;
-        }
         #e264 {
-            row-gap: 24px;
-            > div[data-type="Paragraph"],
-            > div[data-type="Paragraph HTML"] {
-                margin-bottom: -12px !important;
-            }
             > div {
                 @include orderingHas("#e275", "#e276", "#e265", "#e287", "#e286", "#e288");
             }
@@ -29,26 +21,17 @@
                     @include divider;
                 }
                 @include repeaterContainer {
-                    > div > div {
-                        row-gap: 20px;
+                    > div[data-type="Input Fields"] {
+                        @include halfWidth;
+                        &:nth-of-type(1),
+                        &:nth-of-type(2),
+                        &:nth-of-type(3) {
+                            @include fullWidth;
+                        }
                     }
-                    div[data-index] {
-                        .stack-element-separator-row {
-                            display: none;
-                        }
-
-                        > div[data-type="Input Fields"] {
-                            @include halfWidth;
-                            &:nth-of-type(1),
-                            &:nth-of-type(2),
-                            &:nth-of-type(3) {
-                                @include fullWidth;
-                            }
-                        }
-                        > div:nth-last-of-type(1) {
-                            @include divider;
-                            margin-top: 10px;
-                        }
+                    > div:nth-last-of-type(1) {
+                        @include divider;
+                        margin-top: 10px;
                     }
                 }
                 //repeat button container

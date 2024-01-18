@@ -36,3 +36,9 @@
     height: 1px;
     background-color: $grey !important;
 }
+
+@mixin dividers($ids...) {
+    #{$ids} {
+        @include divider;
+    }
+}

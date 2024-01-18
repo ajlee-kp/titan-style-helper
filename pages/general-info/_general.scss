@@ -1,12 +1,9 @@
-@mixin GeneralSection {
+@mixin GeneralStep {
     #e175 {
         @include formSection("#e179", "#e176");
     }
     #e180 {
         @include formSection("#e198", "#e181", "#e199", "#e221");
-        & > div {
-            @include fullWidth;
-        }
         //plaintiff-fields
         #e181 {
             @include inputWithID("#e183", "#e184", "#e185") {
@@ -26,11 +23,6 @@
                 #e192 {
                     @include oneThirdWidth;
                 }
-            }
-            //second header
-            div[data-type="Paragraph HTML"]:has(#e193),
-            div[data-type="Paragraph"]:has(#e193) {
-                margin: 30px 0px -12px !important;
             }
 
             @include inputWithID("#e194") {
@@ -73,28 +65,20 @@
                 row-gap: 25px;
                 //repeat container #e235
                 @include repeaterContainer {
-                    > div > div {
-                        row-gap: 20px;
+                    > div[data-type="Input Fields"] {
+                        &:nth-of-type(1) {
+                            @include fullWidth;
+                        }
+                        &:nth-of-type(2) {
+                            @include halfWidth;
+                        }
+                        &:nth-of-type(3) {
+                            @include halfWidth;
+                        }
                     }
-                    div[data-index] {
-                        .stack-element-separator-row {
-                            display: none;
-                        }
-                        > div[data-type="Input Fields"] {
-                            &:nth-of-type(1) {
-                                @include fullWidth;
-                            }
-                            &:nth-of-type(2) {
-                                @include halfWidth;
-                            }
-                            &:nth-of-type(3) {
-                                @include halfWidth;
-                            }
-                        }
-                        > div:nth-last-of-type(1) {
-                            height: 1px;
-                            background-color: $grey !important;
-                        }
+                    > div:nth-last-of-type(1) {
+                        height: 1px;
+                        background-color: $grey !important;
                     }
                 }
                 //repeat button container

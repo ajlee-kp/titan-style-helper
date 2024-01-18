@@ -1,15 +1,7 @@
-@mixin WorkCompSection {
+@mixin WorkCompStep {
     #e294 {
         @include formSection("#e298", "#e295");
-        & > div {
-            @include fullWidth;
-        }
         #e295 {
-            row-gap: 24px;
-            > div[data-type="Paragraph"],
-            > div[data-type="Paragraph HTML"] {
-                margin-bottom: -12px !important;
-            }
             #e299 {
                 @include innerContainer;
                 > div {
