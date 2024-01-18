@@ -1,8 +1,11 @@
-@import "utility/helper";
 @import "utility/variables";
+@import "utility/template";
+@import "utility/helper";
 @import "utility/gotham";
+
 @import "defaults/overrides";
 @import "defaults/layout";
+@import "defaults/template-layout";
 
 //PAGES
 @import "pages/welcome";
