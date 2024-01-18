@@ -1,5 +1,5 @@
 div[data-type="Container"]:has(div[id="e37"]) > div > div {
-    @include defaultMainRoot;
+    @include rootMain;
     padding: 62px min(25%, 400px);
     @include tablet {
         padding: 50px 100px;
@@ -20,6 +20,6 @@ div[data-type="Container"]:has(div[id="e37"]) > div > div {
     }
     //CTA-button
     #e40 {
-        @include defaultButton;
+        @include button;
     }
 }

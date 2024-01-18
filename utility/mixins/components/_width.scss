@@ -1,0 +1,34 @@
+@mixin oneThirdWidth {
+    width: calc(33.33% - 12px);
+    min-width: calc(33.33% - 12px);
+    @include underTablet {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@mixin twoThirdWidth {
+    width: calc(66.66% - 6px);
+    min-width: calc(66.66% - 6px);
+    @include underTablet {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@mixin halfWidth {
+    width: calc(50% - 6px);
+    min-width: calc(50% - 6px);
+    @include underTablet {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@mixin fullWidth {
+    width: 100%;
+    min-width: 100%;
+    @include underTablet {
+        min-width: 100%;
+    }
+}

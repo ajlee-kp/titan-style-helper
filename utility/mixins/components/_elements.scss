@@ -1,0 +1,38 @@
+@mixin button {
+    font-weight: bold;
+    padding: 15px 60px;
+    border-radius: 5px;
+    border: unset;
+    color: white;
+    background-color: $blue;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 300ms, background-color 300ms;
+    @include underTablet {
+        padding: 12px 50px;
+    }
+    @include mobile {
+        font-size: 0.9rem;
+        padding: 10px 45px;
+    }
+    &:hover,
+    &:active {
+        font-weight: bold !important;
+        padding: 15px 60px !important;
+        border-radius: 5px !important;
+        border: unset !important;
+        @include underTablet {
+            padding: 12px 50px !important;
+        }
+        @include mobile {
+            font-size: 0.9rem !important;
+            padding: 10px 45px !important;
+        }
+        background-color: $darkBlue !important;
+        box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.2) !important;
+    }
+}
+
+@mixin divider {
+    height: 1px;
+    background-color: $grey !important;
+}

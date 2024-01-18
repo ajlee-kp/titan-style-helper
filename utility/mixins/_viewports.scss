@@ -20,6 +20,11 @@
         }
     }
 }
+@mixin dektop {
+    @include mediaQuery(1280px, null) {
+        @content;
+    }
+}
 @mixin smallerThanDesktop {
     @include mediaQuery(null, 1279px) {
         @content;

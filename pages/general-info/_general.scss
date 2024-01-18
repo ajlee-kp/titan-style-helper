@@ -1,9 +1,9 @@
 @mixin GeneralSection {
     #e175 {
-        @include defaultFormSection("#e179", "#e176");
+        @include formSection("#e179", "#e176");
     }
     #e180 {
-        @include defaultFormSection("#e198", "#e181", "#e199", "#e221");
+        @include formSection("#e198", "#e181", "#e199", "#e221");
         & > div {
             @include fullWidth;
         }
@@ -72,7 +72,7 @@
                 flex-direction: column;
                 row-gap: 25px;
                 //repeat container #e235
-                @include defaultRepeatContainer {
+                @include repeaterContainer {
                     > div > div {
                         row-gap: 20px;
                     }
@@ -99,7 +99,7 @@
                 }
                 //repeat button container
                 #e245 {
-                    @include repeatContainerButtons("#e244", "#e246");
+                    @include repeaterButtonContainer("#e244", "#e246");
                 }
             }
         }

@@ -73,7 +73,7 @@ div:has(> div[data-area="Col1"]) {
             justify-content: space-around;
             button {
                 @include elementReset;
-                @include defaultButton;
+                @include button;
             }
         }
     }

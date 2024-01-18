@@ -3,7 +3,7 @@
 @import "work-comp";
 @import "other";
 
-@include defaultStepperRoot('div[id="e172"]') {
+@include rootStepper('div[id="e172"]') {
     div[role="tabpanel"] {
         @include GeneralSection;
         @include EmploymentSection;

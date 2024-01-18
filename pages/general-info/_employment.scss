@@ -1,6 +1,6 @@
 @mixin EmploymentSection {
     #e248 {
-        @include defaultFormSection("#e252", "#e264");
+        @include formSection("#e252", "#e264");
         //employment fields
         & > div {
             @include fullWidth;
@@ -28,7 +28,7 @@
                 #e292 {
                     @include divider;
                 }
-                @include defaultRepeatContainer {
+                @include repeaterContainer {
                     > div > div {
                         row-gap: 20px;
                     }
@@ -53,7 +53,7 @@
                 }
                 //repeat button container
                 #e271 {
-                    @include repeatContainerButtons("#e272", "#e273");
+                    @include repeaterButtonContainer("#e272", "#e273");
                 }
             }
             @include inputWithID("#e286") {

@@ -1,5 +1,5 @@
 div[data-type="Container"]:has(div[id="e71"]) > div > div {
-    @include defaultMainRoot;
+    @include rootMain;
     padding: 62px min(14%, 200px);
     @include tablet {
         padding: 50px 100px;
@@ -47,7 +47,7 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
             row-gap: 12px;
             #e82,
             #e91 {
-                @include defaultFieldsContainer;
+                @include fieldsContainer;
             }
         }
         #e82 {
@@ -90,6 +90,6 @@ div[data-type="Container"]:has(div[id="e71"]) > div > div {
         }
     }
     #e84 {
-        @include defaultButton;
+        @include button;
     }
 }

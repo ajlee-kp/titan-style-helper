@@ -1,6 +1,6 @@
 @mixin WorkCompSection {
     #e294 {
-        @include defaultFormSection("#e298", "#e295");
+        @include formSection("#e298", "#e295");
         & > div {
             @include fullWidth;
         }
@@ -11,7 +11,7 @@
                 margin-bottom: -12px !important;
             }
             #e299 {
-                @include defaultInnerContainer;
+                @include innerContainer;
                 > div {
                     @include orderingHas("#e308", "#e303", "#e304", "#e305", "#e306", "#e307");
                 }

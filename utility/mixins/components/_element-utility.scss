@@ -1,0 +1,41 @@
+@mixin elementReset {
+    position: relative;
+    border: unset;
+    top: unset;
+    left: unset;
+    right: unset;
+    bottom: unset;
+    width: unset;
+    height: unset;
+    min-width: fit-content;
+    min-height: fit-content;
+}
+
+@mixin inputWithID($ids...) {
+    div[data-type="Input Fields"] {
+        &:has(#{$ids}) {
+            @content;
+        }
+    }
+}
+
+@mixin extendBackgroundColor {
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        background-color: inherit;
+        width: 50vw;
+    }
+    &::before {
+        left: 0px;
+        top: 0px;
+        transform: translateX(-100%);
+    }
+    &::after {
+        right: 0px;
+        top: 0px;
+        transform: translateX(100%);
+    }
+}

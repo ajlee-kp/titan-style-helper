@@ -1,7 +1,7 @@
 @mixin OtherSection {
     //military
     #e309 {
-        @include defaultFormSection("#e320", "#e310");
+        @include formSection("#e320", "#e310");
         & > div {
             @include fullWidth;
         }
@@ -12,7 +12,7 @@
                 margin-bottom: -12px !important;
             }
             #e313 {
-                @include defaultInnerContainer;
+                @include innerContainer;
                 > div {
                     @include orderingHas("#e319", "#e317");
                 }
@@ -29,7 +29,7 @@
         }
     }
     #e321 {
-        @include defaultFormSection("#e328", "#e322");
+        @include formSection("#e328", "#e322");
         & > div {
             @include fullWidth;
         }
@@ -40,7 +40,7 @@
                 margin-bottom: -12px !important;
             }
             #e325 {
-                @include defaultInnerContainer;
+                @include innerContainer;
                 > div {
                     @include orderingHas("#e319", "#e317");
                 }
