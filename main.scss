@@ -1,19 +1,16 @@
 @import "utility/variables";
-@import "utility/template";
+@import "utility/template-ids";
 @import "utility/helper";
 @import "utility/gotham";
 
 @import "defaults/overrides";
 @import "defaults/layout";
 
-//TEMPLATE
-@import "template/root-layout";
-@import "template/layout";
-@import "template/input-elements";
-@import "template/container";
-
 //PAGES
 @import "pages/welcome";
 @import "pages/glossary";
 @import "pages/general-info/index";
 @import "pages/injury-damage/index";
+
+//TEMPLATE
+@import "template/template";

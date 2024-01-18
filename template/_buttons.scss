@@ -1,0 +1,29 @@
+@include titanClassWithID($primary-button) {
+    @include button;
+}
+@include titanClassWithID($text-button) {
+    button {
+        background-color: transparent !important;
+        letter-spacing: 0.1rem;
+        transition: letter-spacing 300ms;
+        border: unset !important;
+        font-weight: bold !important;
+        border-radius: 5px !important;
+        padding: 2px 5px !important;
+        @include mediaQuery(null, 999px) {
+            font-size: 0.9rem;
+        }
+        &:hover,
+        &:active {
+            background-color: transparent !important;
+            padding: 2px 5px !important;
+            border: unset !important;
+            font-weight: bold !important;
+            border-radius: 5px !important;
+            letter-spacing: 0.15rem;
+            @include mediaQuery(null, 999px) {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

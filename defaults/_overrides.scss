@@ -165,11 +165,11 @@ div:has(> div[data-area="Col1"]) {
     a {
         color: $mintGreen;
     }
-    .ft--Image--base {
-        @include elementReset;
-        > img {
-            height: fit-content;
-            width: fit-content;
-        }
-    }
+    // .ft--Image--base {
+    //     @include elementReset;
+    //     > img {
+    //         height: fit-content;
+    //         width: fit-content;
+    //     }
+    // }
 }

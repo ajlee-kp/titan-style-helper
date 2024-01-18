@@ -1,0 +1,12 @@
+@mixin elementReset {
+    position: relative;
+    border: unset;
+    top: unset;
+    left: unset;
+    right: unset;
+    bottom: unset;
+    width: unset;
+    height: unset;
+    min-width: fit-content;
+    min-height: fit-content;
+}

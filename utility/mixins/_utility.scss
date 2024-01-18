@@ -27,3 +27,10 @@
         @content;
     }
 }
+
+@mixin titanClassWithID($id) {
+    .ft--#{$id}--root {
+        @include elementReset;
+        @content;
+    }
+}

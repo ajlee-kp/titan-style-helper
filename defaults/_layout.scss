@@ -16,17 +16,17 @@ div:has(> div[data-area="Col1"]) {
             padding: 10px 15px;
         }
 
-        > div[data-type="Image"],
-        .ft--Image--base {
-            position: relative;
-            height: 50px;
-            @include mediaQuery(null, 999px) {
-                height: 40px;
-            }
-            * {
-                height: 100%;
-            }
-        }
+        // > div[data-type="Image"],
+        // .ft--Image--base {
+        //     position: relative;
+        //     height: 50px;
+        //     @include mediaQuery(null, 999px) {
+        //         height: 40px;
+        //     }
+        //     * {
+        //         height: 100%;
+        //     }
+        // }
         > div[data-type="Button"] {
             button {
                 background-color: transparent !important;
