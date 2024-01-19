@@ -28,9 +28,16 @@
     }
 }
 
-@mixin titanClassWithID($id) {
-    .ft--#{$id}--root {
-        @include elementReset;
-        @content;
+@mixin titanClassWithID($id, $container: false) {
+    @if $container {
+        .ft--#{$id}--root {
+            @include containerReset;
+            @content;
+        }
+    } @else {
+        .ft--#{$id}--root {
+            @include elementReset;
+            @content;
+        }
     }
 }

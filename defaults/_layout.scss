@@ -95,11 +95,11 @@ div:has(> div[data-area="Col1"]) {
     div[data-type="Container"] {
         //HEADER ID --- MAIN ID --- FOOTER ID
         //welcome
-        @include orderingHas("#e4", "#e6", "#e7");
+        // @include orderingHas("#e4", "#e6", "#e7");
         //glossary
-        @include orderingHas("#e35", "#e37", "#e41");
+        // @include orderingHas("#e35", "#e37", "#e41");
         //main-contact
-        @include orderingHas("#e69", "#e71", "#e75");
+        // @include orderingHas("#e69", "#e71", "#e75");
         //injury-dmg-health
         @include orderingHas("#e126", "#e129", "#e160");
         //template

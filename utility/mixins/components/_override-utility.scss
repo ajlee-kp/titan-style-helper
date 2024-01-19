@@ -1,5 +1,5 @@
 @mixin elementReset {
-    position: relative;
+    position: relative !important;
     border: unset;
     top: unset;
     left: unset;
@@ -9,4 +9,14 @@
     height: unset;
     min-width: fit-content;
     min-height: fit-content;
+}
+
+@mixin containerReset {
+    @include elementReset;
+    width: 100%;
+    & > div,
+    & > div > div {
+        @include elementReset;
+        width: 100%;
+    }
 }

@@ -1,14 +1,11 @@
 @include titanClassWithID($logo-image) {
     position: relative !important;
-
-    height: 50px;
+    width: 250px !important;
+    height: fit-content !important;
     @include mediaQuery(null, 999px) {
-        height: 40px;
-    }
-    .ft--theme--Image--root {
-        position: relative !important;
+        width: 180px !important;
     }
     img {
-        height: 100%;
+        width: 100%;
     }
 }

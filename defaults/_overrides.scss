@@ -30,141 +30,142 @@ div:has(> div[data-area="Col1"]) {
         max-width: min(100vw, 1440px);
     }
 
-    div[data-type="Container"],
-    div[data-type="Stepper"],
-    div[data-type="Repeat Auto Fit"] {
-        @include elementReset;
-        width: 100%;
-        & > div,
-        & > div > div {
-            @include elementReset;
-            width: 100%;
-        }
-    }
+    // //FIX
+    // div[data-type="Container"],
+    // div[data-type="Stepper"],
+    // div[data-type="Repeat Auto Fit"] {
+    //     @include elementReset;
+    //     width: 100%;
+    //     & > div,
+    //     & > div > div {
+    //         @include elementReset;
+    //         width: 100%;
+    //     }
+    // }
 
-    div[data-type="Stepper"] {
-        .ft--theme--Stepper--panelRoot {
-            @include underTablet {
-                > div {
-                    span {
-                        padding: 0px;
-                        text-align: center;
-                    }
-                    > span {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                    }
-                }
-            }
-            @include mobile {
-                > div {
-                    span {
-                        > span:nth-of-type(2) {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
+    // div[data-type="Stepper"] {
+    //     .ft--theme--Stepper--panelRoot {
+    //         @include underTablet {
+    //             > div {
+    //                 span {
+    //                     padding: 0px;
+    //                     text-align: center;
+    //                 }
+    //                 > span {
+    //                     display: flex;
+    //                     flex-direction: column;
+    //                     justify-content: center;
+    //                 }
+    //             }
+    //         }
+    //         @include mobile {
+    //             > div {
+    //                 span {
+    //                     > span:nth-of-type(2) {
+    //                         display: none;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
 
-        .ft--theme--Stepper--btnRoot {
-            display: flex;
-            justify-content: space-around;
-            button {
-                @include elementReset;
-                @include button;
-            }
-        }
-    }
+    //     .ft--theme--Stepper--btnRoot {
+    //         display: flex;
+    //         justify-content: space-around;
+    //         button {
+    //             @include elementReset;
+    //             @include button;
+    //         }
+    //     }
+    // }
 
-    div[data-type="Paragraph"],
-    div[data-type="Title"],
-    div[data-type="Button"],
-    div[data-type="Paragraph HTML"],
-    label {
-        @include elementReset;
-        width: fit-content;
-    }
+    // div[data-type="Paragraph"],
+    // div[data-type="Title"],
+    // div[data-type="Button"],
+    // div[data-type="Paragraph HTML"],
+    // label {
+    //     @include elementReset;
+    //     width: fit-content;
+    // }
 
-    //FORM RELATED
-    div[data-type="Input Fields"] {
-        @include elementReset;
-        width: 100%;
-    }
+    // //FORM RELATED
+    // div[data-type="Input Fields"] {
+    //     @include elementReset;
+    //     width: 100%;
+    // }
 
-    fieldset {
-        label {
-            display: flex;
-            column-gap: 12px;
-            margin: 0px;
-            width: fit-content;
-            * {
-                padding: 0px !important;
-            }
-        }
-        div {
-            row-gap: 8px !important;
-        }
-    }
+    // fieldset {
+    //     label {
+    //         display: flex;
+    //         column-gap: 12px;
+    //         margin: 0px;
+    //         width: fit-content;
+    //         * {
+    //             padding: 0px !important;
+    //         }
+    //     }
+    //     div {
+    //         row-gap: 8px !important;
+    //     }
+    // }
 
-    input[type="radio"],
-    input[type="checkbox"] {
-        + div {
-            position: relative;
-            width: 25px;
-            height: 25px;
-            border-radius: 5px;
-            border: 3px solid black;
-            transition: background-color 300ms;
-            &::after {
-                position: absolute;
-                top: -3px;
-                left: -3px;
-                content: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24.00 24.00' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M7 12L9.89075 14.8907V14.8907C9.95114 14.951 10.049 14.9511 10.1094 14.8907V14.8907L17 8' stroke='%23000000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
-                width: 100%;
-                height: 100%;
-                transition: clip-path 300ms;
-                clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-            }
-            svg {
-                opacity: 0;
-            }
-        }
-        &:hover {
-            + div {
-                background-color: rgba(128, 128, 128, 0.205);
-            }
-        }
-        &:checked {
-            + div {
-                &::after {
-                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-                }
-            }
-        }
-    }
-    div:has(> input:not([type="radio"], [type="checkbox"])),
-    div:has(> textarea) {
-        border-radius: 5px;
-        background-color: $lightGrey;
-        padding: 5px 10px !important;
-        transition: background-color 300ms;
-        input,
-        textarea {
-            padding: 0px !important;
-        }
-        &:hover {
-            background-color: $grey;
-        }
-        &::after,
-        &::before {
-            display: none;
-        }
-    }
-    a {
-        color: $mintGreen;
-    }
+    // input[type="radio"],
+    // input[type="checkbox"] {
+    //     + div {
+    //         position: relative;
+    //         width: 25px;
+    //         height: 25px;
+    //         border-radius: 5px;
+    //         border: 3px solid black;
+    //         transition: background-color 300ms;
+    //         &::after {
+    //             position: absolute;
+    //             top: -3px;
+    //             left: -3px;
+    //             content: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24.00 24.00' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M7 12L9.89075 14.8907V14.8907C9.95114 14.951 10.049 14.9511 10.1094 14.8907V14.8907L17 8' stroke='%23000000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
+    //             width: 100%;
+    //             height: 100%;
+    //             transition: clip-path 300ms;
+    //             clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    //         }
+    //         svg {
+    //             opacity: 0;
+    //         }
+    //     }
+    //     &:hover {
+    //         + div {
+    //             background-color: rgba(128, 128, 128, 0.205);
+    //         }
+    //     }
+    //     &:checked {
+    //         + div {
+    //             &::after {
+    //                 clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    //             }
+    //         }
+    //     }
+    // }
+    // div:has(> input:not([type="radio"], [type="checkbox"])),
+    // div:has(> textarea) {
+    //     border-radius: 5px;
+    //     background-color: $lightGrey;
+    //     padding: 5px 10px !important;
+    //     transition: background-color 300ms;
+    //     input,
+    //     textarea {
+    //         padding: 0px !important;
+    //     }
+    //     &:hover {
+    //         background-color: $grey;
+    //     }
+    //     &::after,
+    //     &::before {
+    //         display: none;
+    //     }
+    // }
+    // a {
+    //     color: $mintGreen;
+    // }
     // .ft--Image--base {
     //     @include elementReset;
     //     > img {

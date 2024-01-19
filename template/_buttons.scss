@@ -1,9 +1,49 @@
+@mixin defaultButton {
+    font-weight: bold !important;
+    padding: 15px 60px !important;
+    border-radius: 5px !important;
+    border: unset !important;
+    color: white !important;
+    background-color: $blue !important;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2) !important;
+    transition: box-shadow 300ms, background-color 300ms !important;
+    width: fit-content !important;
+    @include underTablet {
+        padding: 12px 50px !important;
+    }
+    @include mobile {
+        font-size: 0.9rem !important;
+        padding: 10px 45px !important;
+    }
+    &:hover,
+    &:active {
+        font-weight: bold !important;
+        padding: 15px 60px !important;
+        border-radius: 5px !important;
+        border: unset !important;
+        width: fit-content !important;
+        @include underTablet {
+            padding: 12px 50px !important;
+        }
+        @include mobile {
+            font-size: 0.9rem !important;
+            padding: 10px 45px !important;
+        }
+        background-color: $darkBlue !important;
+        box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.2) !important;
+    }
+}
 @include titanClassWithID($primary-button) {
-    @include button;
+    width: fit-content !important;
+    button {
+        @include defaultButton;
+    }
 }
 @include titanClassWithID($text-button) {
+    width: fit-content !important;
     button {
         background-color: transparent !important;
+        white-space: nowrap;
         letter-spacing: 0.1rem;
         transition: letter-spacing 300ms;
         border: unset !important;

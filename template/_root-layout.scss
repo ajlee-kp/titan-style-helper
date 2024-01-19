@@ -1,15 +1,30 @@
-.ft--#{$body}--spreadContent {
-    div[data-area="Col1"] {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        width: 100% !important;
-        max-width: min(100vw, 1440px);
-    }
-}
+// .ft--#{$body}--spreadRoot {
+//     @include containerReset;
+//     background-color: $backgroundColor !important;
+//     min-height: 100vh;
+//     *,
+//     ::before,
+//     ::after {
+//         box-sizing: border-box;
+//         min-width: 0;
+//     }
 
-@include titanClassWithID($header) {
+//     * {
+//         font-family: "Gotham", sans-serif !important;
+//         line-height: 1.5;
+//         margin: 0px;
+//     }
+//     div[data-area="Col1"] {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         height: 100%;
+//         width: 100% !important;
+//         max-width: min(100vw, 1440px);
+//     }
+// }
+
+@include titanClassWithID($header, true) {
     order: 1;
     display: flex;
     align-items: center;
@@ -17,6 +32,7 @@
     background-color: #0d1014;
     padding: 16px 50px;
     min-height: 70px;
+    width: 100%;
     @include extendBackgroundColor;
     @include tablet {
         padding: 15px 35px;
@@ -31,14 +47,23 @@
     order: 2;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+    width: 100% !important;
     > div > div {
         height: 100%;
     }
+    @include tablet {
+        row-gap: 40px;
+    }
+    @include mobile {
+        row-gap: 30px;
+    }
 }
-@include titanClassWithID($main) {
+@include titanClassWithID($main, true) {
     @include defaultMain;
 }
-@include titanClassWithID($main-pl) {
+@include titanClassWithID($main-pl, true) {
     @include defaultMain;
     padding: 62px min(25%, 400px);
     @include tablet {
@@ -48,7 +73,7 @@
         padding: 25px 15px;
     }
 }
-@include titanClassWithID($main-ps) {
+@include titanClassWithID($main-ps, true) {
     @include defaultMain;
     padding: 60px 50px;
     @include tablet {
@@ -59,13 +84,15 @@
     }
 }
 //footer
-@include titanClassWithID($footer) {
+@include titanClassWithID($footer, true) {
+    @include containerReset;
     order: 3;
     display: flex;
     justify-content: center;
     background-color: #fbfbfb;
     padding: 20px 50px;
     text-align: center;
+    width: 100%;
     @include extendBackgroundColor;
     @include tablet {
         padding: 15px 35px;
