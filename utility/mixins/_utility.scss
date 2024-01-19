@@ -28,18 +28,16 @@
     }
 }
 
-@mixin titanClassWithID($ids...) {
-    @each $id in $ids {
-        .ft--#{$id}--root:has(> .ft--control--root) {
-            width: 100%;
+@mixin titanClassWithID($id) {
+    .ft--#{$id}--root:has(> .ft--control--root) {
+        width: 100%;
+        @include elementReset;
+        & > .ft--control--root,
+        & .ft--control--root > *,
+        & .ft--form--elem--wrap > * {
+            width: 100% !important;
             @include elementReset;
-            & > .ft--control--root,
-            & .ft--control--root > *,
-            & .ft--form--elem--wrap > * {
-                width: 100% !important;
-                @include elementReset;
-            }
-            @content;
         }
+        @content;
     }
 }

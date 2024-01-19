@@ -97,12 +97,14 @@
         }
     }
 }
-@include titanClassWithID($fields-cont-row) {
-    & > div > div[id] {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 12px;
-        row-gap: 18px;
+@each $field-row-id in $fields-cont-row {
+    @include titanClassWithID($field-row-id) {
+        & > div > div[id] {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 12px;
+            row-gap: 18px;
+        }
     }
 }
 @include titanClassWithID($repeater-cont) {
@@ -120,7 +122,21 @@
         }
     }
 }
-
+// @include titanClassWithID($repeater-button-con) {
+//     & > div > div {
+//         overflow-y: hidden !important;
+//         row-gap: 20px;
+//     }
+//     div[data-index] {
+//         @include innerContainer;
+//         .stack-element-separator-row {
+//             display: none;
+//         }
+//         .ft--elem--show {
+//             display: flex !important;
+//         }
+//     }
+// }
 @include titanClassWithID($divider) {
     width: 100% !important;
     height: 1px;
