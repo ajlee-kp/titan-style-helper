@@ -39,6 +39,57 @@
         @include defaultButton;
     }
 }
+@include titanClassWithID($red-button) {
+    width: fit-content !important;
+    background-color: $warn !important;
+    padding: 8px 30px;
+    font-size: 0.9rem;
+    @include underTablet {
+        padding: 8px 20px;
+    }
+    @include mobile {
+        padding: 8px 15px;
+    }
+    &:hover,
+    &:active {
+        font-size: 0.9rem !important;
+        padding: 8px 30px !important;
+        background-color: #b61414 !important;
+        @include underTablet {
+            padding: 8px 20px !important;
+        }
+        @include mobile {
+            padding: 8px 15px !important;
+        }
+    }
+}
+@include titanClassWithID($green-button) {
+    width: fit-content !important;
+    button {
+        @include button;
+        background-color: $mintGreen !important;
+        padding: 8px 30px;
+        font-size: 0.9rem;
+        @include underTablet {
+            padding: 8px 20px;
+        }
+        @include mobile {
+            padding: 8px 15px;
+        }
+        &:hover,
+        &:active {
+            font-size: 0.9rem !important;
+            padding: 8px 30px !important;
+            background-color: #199c77 !important;
+            @include underTablet {
+                padding: 8px 20px !important;
+            }
+            @include mobile {
+                padding: 8px 15px !important;
+            }
+        }
+    }
+}
 @include titanClassWithID($text-button) {
     width: fit-content !important;
     button {
