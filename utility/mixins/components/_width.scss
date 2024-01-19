@@ -1,6 +1,8 @@
+$fields-column-gap: 12px;
+
 @mixin oneThirdWidth {
-    width: calc(33.33% - 12px);
-    min-width: calc(33.33% - 12px);
+    width: calc(33.33% - $fields-column-gap);
+    min-width: calc(33.33% - $fields-column-gap);
     @include underTablet {
         width: 100%;
         min-width: 100%;
@@ -8,8 +10,8 @@
 }
 
 @mixin twoThirdWidth {
-    width: calc(66.66% - 6px);
-    min-width: calc(66.66% - 6px);
+    width: calc(66.66% - $fields-column-gap / 2);
+    min-width: calc(66.66% - $fields-column-gap / 2);
     @include underTablet {
         width: 100%;
         min-width: 100%;
@@ -17,8 +19,8 @@
 }
 
 @mixin halfWidth {
-    width: calc(50% - 6px);
-    min-width: calc(50% - 6px);
+    width: calc(50% - $fields-column-gap / 2);
+    min-width: calc(50% - $fields-column-gap / 2);
     @include underTablet {
         width: 100%;
         min-width: 100%;

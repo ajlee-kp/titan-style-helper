@@ -59,6 +59,7 @@
 }
 
 @mixin defaultFlexContainer {
+    width: 100%;
     .ft--elem--show {
         display: flex !important;
     }
@@ -78,25 +79,13 @@
         flex-direction: row;
     }
 }
-@mixin defaultFlexContainer {
-    .ft--elem--show {
-        display: flex !important;
-    }
-    > div > div[id] {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        @content;
-    }
-}
-// @include titanClassWithID($grid-col-cont, true) {
-// }
+
 @include titanClassWithID($fields-cont, true) {
     & > div > div[id] {
         display: flex;
         flex-direction: column;
         column-gap: 12px;
-        row-gap: 20px;
+        row-gap: 18px;
         border-radius: 3px;
         border: 1px solid black;
         background-color: white;
@@ -107,20 +96,48 @@
         }
     }
 }
-
 @each $field-row-id in $fields-cont-row {
     @include titanClassWithID($field-row-id, true) {
         & > div > div[id] {
             display: flex;
+            flex-wrap: wrap;
             column-gap: 12px;
             row-gap: 18px;
         }
     }
 }
 @include titanClassWithID($repeater-cont) {
+    & > div > div {
+        overflow-y: hidden !important;
+        row-gap: 20px;
+    }
+    div[data-index] {
+        @include innerContainer;
+        .stack-element-separator-row {
+            display: none;
+        }
+        .ft--elem--show {
+            display: flex !important;
+        }
+    }
 }
-
+// @include titanClassWithID($repeater-button-con) {
+//     & > div > div {
+//         overflow-y: hidden !important;
+//         row-gap: 20px;
+//     }
+//     div[data-index] {
+//         @include innerContainer;
+//         .stack-element-separator-row {
+//             display: none;
+//         }
+//         .ft--elem--show {
+//             display: flex !important;
+//         }
+//     }
+// }
 @include titanClassWithID($divider) {
+    width: 100% !important;
     height: 1px;
     background-color: $grey !important;
 }

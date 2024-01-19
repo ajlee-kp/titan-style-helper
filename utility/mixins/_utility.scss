@@ -38,16 +38,11 @@
                 display: none !important;
             }
         }
-        & > div,
-        & > div > *[id] {
-            width: 100%;
+        & > .ft--control--root,
+        & .ft--control--root > *,
+        & .ft--form--elem--wrap > * {
+            width: 100% !important;
             @include elementReset;
-            @if $container {
-                .element-display-width,
-                .element-display-height {
-                    display: none !important;
-                }
-            }
         }
         @content;
     }
