@@ -102,7 +102,7 @@
     }
 }
 
-@each $field-row-id in $fields-row-container {
+@each $field-row-id in $fields-con-row {
     @include titanClassWithID($field-row-id, true) {
         & > div > div[id] {
             display: flex;
