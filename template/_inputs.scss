@@ -25,6 +25,9 @@
             display: none;
         }
     }
+    textarea {
+        min-height: 85px;
+    }
     input[type="radio"] {
         + div {
             position: relative;
