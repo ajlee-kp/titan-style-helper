@@ -1,22 +1,12 @@
 @mixin elementReset {
     position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    bottom: unset !important;
     border: unset;
-    top: unset;
-    left: unset;
-    right: unset;
-    bottom: unset;
     width: unset;
     height: unset;
     min-width: fit-content;
     min-height: fit-content;
-}
-
-@mixin containerReset {
-    @include elementReset;
-    width: 100%;
-    & > div,
-    & > div > div {
-        @include elementReset;
-        width: 100%;
-    }
 }

@@ -29,15 +29,26 @@
 }
 
 @mixin titanClassWithID($id, $container: false) {
-    @if $container {
-        .ft--#{$id}--root {
-            @include containerReset;
-            @content;
+    .ft--#{$id}--root:has(> .ft--control--root) {
+        width: 100%;
+        @include elementReset;
+        @if $container {
+            .element-display-width,
+            .element-display-height {
+                display: none !important;
+            }
         }
-    } @else {
-        .ft--#{$id}--root {
+        & > div,
+        & > div > *[id] {
+            width: 100%;
             @include elementReset;
-            @content;
+            @if $container {
+                .element-display-width,
+                .element-display-height {
+                    display: none !important;
+                }
+            }
         }
+        @content;
     }
 }

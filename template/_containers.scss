@@ -1,2 +1,113 @@
+@use "sass:list";
 @include titanClassWithID($stepper, true) {
+    width: 100% !important;
+    & > div > div[id] {
+        width: 100% !important;
+        .stack-element-separator-row {
+            display: none;
+        }
+        .ft--theme--Stepper--panelRoot {
+            padding: 30px 0px !important;
+            & > div > span {
+                span {
+                    text-align: center;
+                }
+                @include tablet {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                @include mediaQuery(null, 550px) {
+                    > span:nth-of-type(2) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .ft--theme--Stepper--btnRoot {
+            margin-bottom: 62px;
+            @include tablet {
+                margin-bottom: 50px;
+            }
+            @include mobile {
+                margin-bottom: 36px;
+            }
+        }
+        div[role="tabpanel"] {
+            &[hidden] {
+                display: none;
+            }
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            height: 100%;
+            padding: 62px min(14%, 200px) 36px;
+            @include tablet {
+                padding: 50px 100px 36px;
+            }
+            @include mobile {
+                padding: 25px 15px 36px;
+            }
+        }
+    }
+}
+
+@mixin defaultFlexContainer {
+    .ft--elem--show {
+        display: flex !important;
+    }
+    > div > div[id] {
+        display: flex;
+        gap: 12px;
+        @content;
+    }
+}
+@include titanClassWithID($flex-col-container, true) {
+    @include defaultFlexContainer {
+        flex-direction: column;
+    }
+}
+@include titanClassWithID($flex-row-container, true) {
+    @include defaultFlexContainer {
+        flex-direction: row;
+    }
+}
+@mixin defaultFlexContainer {
+    .ft--elem--show {
+        display: flex !important;
+    }
+    > div > div[id] {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        @content;
+    }
+}
+// @include titanClassWithID($grid-col-container, true) {
+// }
+@include titanClassWithID($fields-container, true) {
+    & > div > div[id] {
+        display: flex;
+        flex-direction: column;
+        column-gap: 12px;
+        row-gap: 20px;
+        border-radius: 3px;
+        border: 1px solid black;
+        background-color: white;
+        padding: 22px 14px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        .ft--elem--show {
+            display: flex !important;
+        }
+    }
+}
+
+@each $field-row-id in $fields-row-container {
+    @include titanClassWithID($field-row-id, true) {
+        & > div > div[id] {
+            display: flex;
+            column-gap: 12px;
+            row-gap: 20px;
+        }
+    }
 }

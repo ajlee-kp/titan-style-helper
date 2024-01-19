@@ -1,9 +1,9 @@
-@include titanClassWithID($logo-image) {
+.ft--#{$logo-image}--root {
     position: relative !important;
     width: 250px !important;
     height: fit-content !important;
     @include mediaQuery(null, 999px) {
-        width: 180px !important;
+        width: 190px !important;
     }
     img {
         width: 100%;

@@ -29,7 +29,9 @@ div:has(> div[data-area="Col1"]) {
         width: 100% !important;
         max-width: min(100vw, 1440px);
     }
-
+    a {
+        color: $mintGreen;
+    }
     // //FIX
     // div[data-type="Container"],
     // div[data-type="Stepper"],
@@ -94,21 +96,6 @@ div:has(> div[data-area="Col1"]) {
     //     width: 100%;
     // }
 
-    // fieldset {
-    //     label {
-    //         display: flex;
-    //         column-gap: 12px;
-    //         margin: 0px;
-    //         width: fit-content;
-    //         * {
-    //             padding: 0px !important;
-    //         }
-    //     }
-    //     div {
-    //         row-gap: 8px !important;
-    //     }
-    // }
-
     // input[type="radio"],
     // input[type="checkbox"] {
     //     + div {
@@ -163,9 +150,7 @@ div:has(> div[data-area="Col1"]) {
     //         display: none;
     //     }
     // }
-    // a {
-    //     color: $mintGreen;
-    // }
+
     // .ft--Image--base {
     //     @include elementReset;
     //     > img {
