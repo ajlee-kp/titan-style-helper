@@ -26,13 +26,36 @@
     }
 }
 //main
-@include titanClassWithID($main) {
+@mixin defaultMain {
     flex: 1;
     order: 2;
     display: flex;
     flex-direction: column;
     > div > div {
         height: 100%;
+    }
+}
+@include titanClassWithID($main) {
+    @include defaultMain;
+}
+@include titanClassWithID($main-pl) {
+    @include defaultMain;
+    padding: 62px min(25%, 400px);
+    @include tablet {
+        padding: 50px 100px;
+    }
+    @include mobile {
+        padding: 25px 15px;
+    }
+}
+@include titanClassWithID($main-ps) {
+    @include defaultMain;
+    padding: 60px 50px;
+    @include tablet {
+        padding: 35px 35px;
+    }
+    @include mobile {
+        padding: 25px 15px;
     }
 }
 //footer
