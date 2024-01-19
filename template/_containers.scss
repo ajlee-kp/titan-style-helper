@@ -1,5 +1,5 @@
 @use "sass:list";
-@include titanClassWithID($stepper, true) {
+@include titanClassWithID($stepper) {
     width: 100% !important;
     & > div > div[id] {
         width: 100% !important;
@@ -69,19 +69,19 @@
         @content;
     }
 }
-@include titanClassWithID($flex-col-cont, true) {
+@include titanClassWithID($flex-col-cont) {
     @include defaultFlexContainer {
         flex-direction: column;
     }
 }
-@include titanClassWithID($flex-row-cont, true) {
+@include titanClassWithID($flex-row-cont) {
     @include defaultFlexContainer {
         flex-direction: row;
         flex-wrap: wrap;
     }
 }
 
-@include titanClassWithID($fields-cont, true) {
+@include titanClassWithID($fields-cont) {
     & > div > div[id] {
         display: flex;
         flex-direction: column;
@@ -97,14 +97,12 @@
         }
     }
 }
-@each $field-row-id in $fields-cont-row {
-    @include titanClassWithID($field-row-id, true) {
-        & > div > div[id] {
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 12px;
-            row-gap: 18px;
-        }
+@include titanClassWithID($fields-cont-row) {
+    & > div > div[id] {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 12px;
+        row-gap: 18px;
     }
 }
 @include titanClassWithID($repeater-cont) {
@@ -122,21 +120,7 @@
         }
     }
 }
-// @include titanClassWithID($repeater-button-con) {
-//     & > div > div {
-//         overflow-y: hidden !important;
-//         row-gap: 20px;
-//     }
-//     div[data-index] {
-//         @include innerContainer;
-//         .stack-element-separator-row {
-//             display: none;
-//         }
-//         .ft--elem--show {
-//             display: flex !important;
-//         }
-//     }
-// }
+
 @include titanClassWithID($divider) {
     width: 100% !important;
     height: 1px;

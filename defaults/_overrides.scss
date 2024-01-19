@@ -29,6 +29,10 @@ div:has(> div[data-area="Col1"]) {
         width: 100% !important;
         max-width: min(100vw, 1440px);
     }
+    .element-display-width,
+    .element-display-height {
+        display: none !important;
+    }
     a {
         color: $mintGreen;
     }
