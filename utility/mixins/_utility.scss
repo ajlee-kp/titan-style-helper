@@ -28,6 +28,39 @@
     }
 }
 
+@mixin titanPhone{
+    border-bottom: none !important;
+    @include elementReset;
+    &:before,
+    &:after,
+    &:hover:before,
+    &:hover:after {
+        border-bottom: none !important;
+    }
+    > div {
+        border-bottom: none !important;
+        &:before,
+        &:after,
+        &:hover:before,
+        &:hover:after,
+        &::before,
+        &::after{
+            border-bottom: none !important;
+        }
+    }
+    > div > div {
+        border-bottom: none !important;
+        &:before,
+        &:after,
+        &:hover:before,
+        &:hover:after,
+        &::before,
+        &::after{
+            border-bottom: none !important;
+        }
+    }
+}
+
 @mixin titanClassWithID($id) {
     .ft--#{$id}--root:has(> .ft--control--root) {
         width: 100%;
@@ -38,6 +71,11 @@
             width: 100% !important;
             @include elementReset;
         }
+
+        & > .ft--theme--FormField--phone {
+            @include titanPhone;
+        }
+
         @content;
     }
 }
