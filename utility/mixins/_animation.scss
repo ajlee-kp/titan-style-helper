@@ -6,16 +6,7 @@
         width: 100%;
     }
 }
-@keyframes fade-in {
-    from {
-        background-color: red;
-        opacity: 0;
-    }
-    to {
-        background-color: blue;
-        opacity: 1;
-    }
-}
+
 //ANIMATION
 @mixin aniUnderline {
     position: relative;

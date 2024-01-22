@@ -9,3 +9,27 @@
         width: 100%;
     }
 }
+.ft--#{$home-route-indicator}--root {
+    @include elementReset;
+    position: absolute !important;
+    z-index: 10;
+    left: 34px !important;
+    width: 24px !important;
+    height: 24px !important;
+    @include mediaQuery(null, 999px) {
+        left: 28px !important;
+    }
+    @include mobile {
+        left: 20px !important;
+    }
+    img {
+        @include elementReset;
+        width: 100%;
+    }
+}
+.ft--#{$image-reset}--root {
+    @include elementReset;
+    img {
+        @include elementReset;
+    }
+}

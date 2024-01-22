@@ -122,5 +122,57 @@
     }
 }
 
-@include titanClassWithID($button-reset) {
+@include titanClassWithID($route-button) {
+    width: 100%;
+    button {
+        & > div {
+            width: fit-content !important;
+        }
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;
+        border-radius: 10px !important;
+        border: 1px solid black !important;
+        background-color: white !important;
+        color: black !important;
+        padding: 14px 12px 14px 100px !important;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+        transition: box-shadow 300ms, background-color 300ms !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        text-align: start;
+        @include underTablet {
+            padding: 14px 12px 14px 85px !important;
+        }
+        @include mobile {
+            padding: 14px 12px 14px 60px !important;
+        }
+        &:after {
+            position: relative;
+            content: url("data:image/svg+xml,%3Csvg width='32px' height='32px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.79289 6.29289C9.18342 5.90237 9.81658 5.90237 10.2071 6.29289L15.2071 11.2929C15.5976 11.6834 15.5976 12.3166 15.2071 12.7071L10.2071 17.7071C9.81658 18.0976 9.18342 18.0976 8.79289 17.7071C8.40237 17.3166 8.40237 16.6834 8.79289 16.2929L13.0858 12L8.79289 7.70711C8.40237 7.31658 8.40237 6.68342 8.79289 6.29289Z' fill='%23000000'/%3E%3C/svg%3E");
+            width: 32px;
+            height: 32px;
+            transition: transform 200ms;
+        }
+        &:hover,
+        &:active {
+            line-height: 1 !important;
+            font-weight: bold !important;
+            padding: 14px 12px 14px 100px !important;
+            border-radius: 10px !important;
+            border: 1px solid black !important;
+            background-color: rgb(238, 238, 238) !important;
+            box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25) !important;
+            @include underTablet {
+                padding: 14px 12px 14px 85px !important;
+            }
+            @include mobile {
+                padding: 14px 12px 14px 60px !important;
+            }
+            &:after {
+                transform: translateX(10%);
+            }
+        }
+    }
 }
