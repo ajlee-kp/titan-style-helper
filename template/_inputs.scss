@@ -25,13 +25,10 @@
             display: none;
         }
     }
-
-    input[type="phone"]{
-        &::after{
-            display: none !important;
-        }
-        &::before{
-            display: none !important;
+    .ft--theme--FormField-elRoot {
+        &::after,
+        &::before {
+            display: none;
         }
     }
 

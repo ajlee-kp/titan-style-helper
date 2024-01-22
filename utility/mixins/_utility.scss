@@ -27,8 +27,8 @@
         @content;
     }
 }
-
-@mixin titanPhone{
+//CHECK AND REMOVE
+@mixin titanPhone {
     border-bottom: none !important;
     @include elementReset;
     &:before,
@@ -44,7 +44,7 @@
         &:hover:before,
         &:hover:after,
         &::before,
-        &::after{
+        &::after {
             border-bottom: none !important;
         }
     }
@@ -55,7 +55,7 @@
         &:hover:before,
         &:hover:after,
         &::before,
-        &::after{
+        &::after {
             border-bottom: none !important;
         }
     }
@@ -71,11 +71,6 @@
             width: 100% !important;
             @include elementReset;
         }
-
-        & > .ft--theme--FormField--phone {
-            @include titanPhone;
-        }
-
         @content;
     }
 }
