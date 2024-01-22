@@ -9,13 +9,13 @@ $footer: "e442";
 //Containers
 $container-reset: "";
 $stepper: "e579";
-$stepper-flex-col: "";
 
 $flex-col-cont: "e580";
 $flex-row-cont: "e730";
 $fields-cont: "e589";
 $fields-cont-row: "e629", "e633", "e636", "e639", "e642", "e645", "e648", "e651", "e654", "e657";
-$repeater-cont: "e725";
+$repeater-row-cont: "e725";
+$repeater-col-cont: "e1361";
 $repeater-button-cont: "e717";
 $divider: "e717";
 
@@ -33,7 +33,7 @@ $step-section-header: "e588";
 $typography-reset: "e590";
 
 //Button
-$button-reset: "";
+$button-reset: "e1053";
 $primary-button: "e458";
 $green-button: "e457";
 $red-button: "e460";

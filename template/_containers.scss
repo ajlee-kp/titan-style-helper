@@ -85,8 +85,7 @@
     & > div > div[id] {
         display: flex;
         flex-direction: column;
-        column-gap: 12px;
-        row-gap: 18px;
+        gap: 12px;
         border-radius: 3px;
         border: 1px solid black;
         background-color: white;
@@ -103,14 +102,16 @@
             display: flex;
             flex-wrap: wrap;
             column-gap: 12px;
-            row-gap: 18px;
+            row-gap: 10px;
+            height: fit-content;
         }
     }
 }
-@include titanClassWithID($repeater-cont) {
+
+@include titanClassWithID($repeater-row-cont) {
     & > div > div {
         overflow-y: hidden !important;
-        row-gap: 20px;
+        row-gap: 18px;
     }
     div[data-index] {
         @include innerContainer;
@@ -122,21 +123,22 @@
         }
     }
 }
-// @include titanClassWithID($repeater-button-con) {
-//     & > div > div {
-//         overflow-y: hidden !important;
-//         row-gap: 20px;
-//     }
-//     div[data-index] {
-//         @include innerContainer;
-//         .stack-element-separator-row {
-//             display: none;
-//         }
-//         .ft--elem--show {
-//             display: flex !important;
-//         }
-//     }
-// }
+@include titanClassWithID($repeater-col-cont) {
+    & > div > div {
+        overflow-y: hidden !important;
+        row-gap: 18px;
+    }
+    div[data-index] {
+        @include innerContainer;
+        flex-direction: column;
+        .stack-element-separator-row {
+            display: none;
+        }
+        .ft--elem--show {
+            display: flex !important;
+        }
+    }
+}
 @include titanClassWithID($divider) {
     width: 100% !important;
     height: 1px;
