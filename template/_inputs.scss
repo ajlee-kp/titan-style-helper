@@ -2,104 +2,114 @@
 }
 
 @mixin defaultInput {
-    label {
-        @include elementReset;
-        width: fit-content;
+  label {
+    @include elementReset;
+    width: fit-content;
+  }
+  div:has(> input),
+  div:has(> textarea) {
+    width: 100%;
+    border-radius: 5px;
+    background-color: $lightGrey;
+    padding: 5px 10px !important;
+    transition: background-color 300ms;
+    input,
+    textarea {
+      padding: 0px !important;
     }
-    div:has(> input),
-    div:has(> textarea) {
+    &:hover {
+      background-color: $grey;
+    }
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+  .ft--theme--FormField-elRoot {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  input[type="radio"] {
+    + div {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
+      border: 3px solid black;
+      transition: background-color 300ms;
+      &::after {
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        content: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24.00 24.00' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M7 12L9.89075 14.8907V14.8907C9.95114 14.951 10.049 14.9511 10.1094 14.8907V14.8907L17 8' stroke='%23000000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
         width: 100%;
-        border-radius: 5px;
-        background-color: $lightGrey;
-        padding: 5px 10px !important;
-        transition: background-color 300ms;
-        input,
-        textarea {
-            padding: 0px !important;
-        }
-        &:hover {
-            background-color: $grey;
-        }
-        &::after,
-        &::before {
-            display: none;
-        }
+        height: 100%;
+        transition: clip-path 300ms;
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      }
+      svg {
+        opacity: 0;
+      }
     }
-    .ft--theme--FormField-elRoot {
-        &::after,
-        &::before {
-            display: none;
-        }
+    &:hover {
+      + div {
+        background-color: rgba(128, 128, 128, 0.205);
+      }
     }
+    &:checked {
+      + div {
+        &::after {
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+      }
+    }
+  }
 
-    input[type="radio"] {
-        + div {
-            position: relative;
-            width: 25px;
-            height: 25px;
-            border-radius: 5px;
-            border: 3px solid black;
-            transition: background-color 300ms;
-            &::after {
-                position: absolute;
-                top: -3px;
-                left: -3px;
-                content: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24.00 24.00' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M7 12L9.89075 14.8907V14.8907C9.95114 14.951 10.049 14.9511 10.1094 14.8907V14.8907L17 8' stroke='%23000000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
-                width: 100%;
-                height: 100%;
-                transition: clip-path 300ms;
-                clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-            }
-            svg {
-                opacity: 0;
-            }
-        }
-        &:hover {
-            + div {
-                background-color: rgba(128, 128, 128, 0.205);
-            }
-        }
-        &:checked {
-            + div {
-                &::after {
-                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-                }
-            }
-        }
+  fieldset {
+    label {
+      display: flex;
+      column-gap: 12px;
+      margin: 0px;
+      width: fit-content;
+      * {
+        padding: 0px !important;
+      }
     }
-
-    fieldset {
-        label {
-            display: flex;
-            column-gap: 12px;
-            margin: 0px;
-            width: fit-content;
-            * {
-                padding: 0px !important;
-            }
-        }
-        div {
-            row-gap: 8px !important;
-        }
+    div {
+      row-gap: 8px !important;
     }
+  }
 }
 
 @include titanClassWithID($input-1-3) {
-    @include defaultInput;
-    @include oneThirdWidth;
+  @include defaultInput;
+  @include oneThirdWidth;
 }
 
 @include titanClassWithID($input-2-3) {
-    @include defaultInput;
-    @include twoThirdWidth;
+  @include defaultInput;
+  @include twoThirdWidth;
 }
 
 @include titanClassWithID($input-full) {
-    @include defaultInput;
-    @include fullWidth;
+  @include defaultInput;
+  @include fullWidth;
 }
 
 @include titanClassWithID($input-1-2) {
-    @include defaultInput;
-    @include halfWidth;
+  @include defaultInput;
+  @include halfWidth;
+}
+@include titanClassWithID($input-full-bold) {
+  @include defaultInput;
+  @include fullWidth;
+  span {
+    font-weight: bold !important;
+  }
+  .ft-caption {
+    font-weight: bold !important;
+  }
 }
