@@ -27,7 +27,7 @@
         width: 100%;
     }
 }
-.ft--#{$image-reset}--root {
+.ft--#{$small-icon}--root {
     @include elementReset;
     img {
         @include elementReset;
