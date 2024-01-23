@@ -25,85 +25,97 @@
 // }
 
 @include titanClassWithID($header) {
-    order: 1;
-    & > div > div[id] {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #0d1014;
-        padding: 16px 50px;
-        min-height: 70px;
-        width: 100%;
-        @include extendBackgroundColor;
-        @include tablet {
-            padding: 15px 35px;
-        }
-        @include mobile {
-            padding: 10px 15px;
-        }
+  order: 1;
+  & > div > div[id] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d1014;
+    padding: 16px 50px;
+    min-height: 70px;
+    width: 100%;
+    @include extendBackgroundColor;
+    @include tablet {
+      padding: 15px 35px;
     }
+    @include mobile {
+      padding: 10px 15px;
+    }
+  }
 }
 //main
 @mixin defaultMain {
-    flex: 1;
-    order: 2;
-    & > div > div[id] {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 48px;
-        width: 100% !important;
-        height: 100%;
-        @include tablet {
-            row-gap: 40px;
-        }
-        @include mobile {
-            row-gap: 30px;
-        }
-        @content;
+  flex: 1;
+  order: 2;
+  & > div > div[id] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+    width: 100% !important;
+    height: 100%;
+    @include tablet {
+      row-gap: 40px;
     }
+    @include mobile {
+      row-gap: 30px;
+    }
+    @content;
+  }
 }
 @include titanClassWithID($main) {
-    @include defaultMain;
+  @include defaultMain;
 }
 @include titanClassWithID($main-pl) {
-    @include defaultMain {
-        padding: 62px min(25%, 400px);
-        @include tablet {
-            padding: 50px 100px;
-        }
-        @include mobile {
-            padding: 25px 15px;
-        }
+  @include defaultMain {
+    padding: 62px min(25%, 400px);
+    @include tablet {
+      padding: 50px 100px;
     }
+    @include mobile {
+      padding: 25px 15px;
+    }
+  }
+}
+
+@include titanClassWithID($main-pm) {
+  @include defaultMain {
+    padding: 62px min(14%, 200px) 36px;
+    @include tablet {
+      padding: 50px 100px 36px;
+    }
+    @include mobile {
+      padding: 25px 15px 36px;
+    }
+  }
 }
 @include titanClassWithID($main-ps) {
-    @include defaultMain {
-        padding: 60px 50px;
-        @include tablet {
-            padding: 35px 35px;
-        }
-        @include mobile {
-            padding: 25px 15px;
-        }
+  @include defaultMain {
+    padding: 60px 50px;
+    @include tablet {
+      padding: 35px 35px;
     }
+    @include mobile {
+      padding: 25px 15px;
+    }
+  }
 }
 //footer
 @include titanClassWithID($footer) {
-    order: 3;
-    & > div > div[id] {
-        display: flex;
-        justify-content: center;
-        background-color: #fbfbfb;
-        padding: 20px 50px;
-        text-align: center;
-        width: 100%;
-        @include extendBackgroundColor;
-        @include tablet {
-            padding: 15px 35px;
-        }
-        @include mobile {
-            padding: 15px;
-        }
+  order: 3;
+  & > div > div[id] {
+    display: flex;
+    justify-content: center;
+    background-color: #fbfbfb;
+    padding: 20px 50px;
+    text-align: center;
+    width: 100%;
+    @include extendBackgroundColor;
+    @include tablet {
+      padding: 15px 35px;
     }
+    @include mobile {
+      padding: 15px;
+    }
+  }
 }

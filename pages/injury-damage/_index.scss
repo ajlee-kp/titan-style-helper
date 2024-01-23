@@ -1,7 +1,0 @@
-@import "injuries";
-@import "damages";
-
-@include rootStepper("#e129") {
-    @include InjuriesStep;
-    @include DamagesStep;
-}
