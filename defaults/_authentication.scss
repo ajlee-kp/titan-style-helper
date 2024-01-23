@@ -1,0 +1,51 @@
+.login-signup-container {
+  height: 100%;
+  padding: 0;
+}
+.login-signup-center-part,
+.verification-center-part {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 150px min(25%, 400px);
+  background-color: $backgroundColor !important;
+  @include tablet {
+    padding: 130px 100px;
+  }
+  @include mobile {
+    padding: 130px 15px;
+  }
+}
+
+.login-signup-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100% !important;
+  height: 100% !important;
+  text-align: center;
+  box-shadow: unset !important;
+  border-radius: unset !important;
+  padding: unset !important;
+  h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content !important;
+    @include aniUnderline;
+  }
+  form {
+    .btn-container {
+      margin: 0px;
+    }
+    button {
+      @include elementReset;
+      @include defaultButton;
+      background-color: $blue !important;
+      &:hover,
+      &:active {
+        background-color: $darkBlue !important;
+      }
+    }
+  }
+}

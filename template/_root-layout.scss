@@ -1,29 +1,3 @@
-// .ft--#{$body}--spreadRoot {
-//     @include containerReset;
-//     background-color: $backgroundColor !important;
-//     min-height: 100vh;
-//     *,
-//     ::before,
-//     ::after {
-//         box-sizing: border-box;
-//         min-width: 0;
-//     }
-
-//     * {
-//         font-family: "Gotham", sans-serif !important;
-//         line-height: 1.5;
-//         margin: 0px;
-//     }
-//     div[data-area="Col1"] {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         height: 100%;
-//         width: 100% !important;
-//         max-width: min(100vw, 1440px);
-//     }
-// }
-
 @include titanClassWithID($header) {
   order: 1;
   & > div > div[id] {
