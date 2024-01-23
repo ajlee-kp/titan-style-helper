@@ -44,8 +44,15 @@
       background-color: $blue !important;
       &:hover,
       &:active {
+        border: unset !important;
         background-color: $darkBlue !important;
       }
+    }
+    .fterror {
+      color: $warn;
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
     }
   }
 }
