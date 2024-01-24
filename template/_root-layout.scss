@@ -13,7 +13,7 @@
       padding: 15px 35px;
     }
     @include mobile {
-      padding: 10px 15px;
+      padding: 10px;
     }
   }
 }
@@ -47,7 +47,7 @@
       padding: 50px 100px;
     }
     @include mobile {
-      padding: 25px 15px;
+      padding: 25px 10px;
     }
   }
 }
@@ -59,7 +59,7 @@
       padding: 50px 100px 36px;
     }
     @include mobile {
-      padding: 25px 15px 36px;
+      padding: 25px 10px 36px;
     }
   }
 }
@@ -70,7 +70,7 @@
       padding: 35px 35px;
     }
     @include mobile {
-      padding: 25px 15px;
+      padding: 25px 10px;
     }
   }
 }
@@ -89,7 +89,7 @@
       padding: 15px 35px;
     }
     @include mobile {
-      padding: 15px;
+      padding: 15px 10px;
     }
   }
 }
