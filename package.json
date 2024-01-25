@@ -1,25 +1,25 @@
 {
-    "name": "titan",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "sass": "sass main.scss prepostcss-style.css --no-source-map",
-        "sass:watch": "sass --watch main.scss prepostcss-style.css --no-source-map",
-        "post": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer",
-        "post:watch": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer --watch",
-        "style": "npm run sass && npm run post",
-        "style:watch": "concurrently \"npm run sass:watch\" \"npm run post:watch\"",
-        "prepare": "npm run sass && npm run post"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "autoprefixer": "^10.4.16",
-        "concurrently": "^8.2.2",
-        "postcss": "^8.4.33",
-        "postcss-cli": "^11.0.0",
-        "sass": "^1.69.7"
-    }
+  "name": "titan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass main.scss prepostcss-style.css --no-source-map --style=compressed",
+    "sass:watch": "sass --watch main.scss prepostcss-style.css --no-source-map --style=compressed",
+    "post": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer",
+    "post:watch": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer --watch",
+    "style": "npm run sass && npm run post",
+    "style:watch": "concurrently \"npm run sass:watch\" \"npm run post:watch\"",
+    "prepare": "npm run sass && npm run post"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.69.7"
+  }
 }
