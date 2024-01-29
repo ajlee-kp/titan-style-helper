@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "sass": "sass main.scss prepostcss-style.css --no-source-map",
-        "sass:watch": "sass --watch main.scss prepostcss-style.css --no-source-map",
+        "sass": "sass main.scss prepostcss-style.css --no-source-map --style compressed",
+        "sass:watch": "sass --watch main.scss prepostcss-style.css --no-source-map --style compressed",
         "post": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer",
         "post:watch": "postcss prepostcss-style.css --output style.css  --no-map --use autoprefixer --watch",
         "style": "npm run sass && npm run post",

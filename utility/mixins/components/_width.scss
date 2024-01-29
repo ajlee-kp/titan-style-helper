@@ -1,8 +1,8 @@
 $fields-column-gap: 12px;
 
 @mixin oneThirdWidth {
-    width: calc(33.33% - $fields-column-gap);
-    min-width: calc(33.33% - $fields-column-gap);
+    width: calc(33.33% - ($fields-column-gap / 3 * 2));
+    min-width: calc(33.33% - ($fields-column-gap / 3 * 2));
     @include underTablet {
         width: 100%;
         min-width: 100%;
