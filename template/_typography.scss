@@ -2,10 +2,32 @@
     @include aniUnderline;
 }
 @include titanClassWithID($paragraph) {
-    font-size: 1rem;
-    line-height: 1.2;
+    font-size: 1vmax;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 10px;
+    height: fit-content;
     @include mobile {
         font-size: 0.9rem;
+    }
+}
+@include titanClassWithID($paragraph-info-1) {
+    font-size: 1vmax!important;
+    display: flex!important;
+    text-align:center;
+    flex-wrap: wrap!important;
+    column-gap: 12px;
+    row-gap: 5px;
+    height: fit-content;
+    width: fit-content!important;
+    //height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    @include mobile {
+        font-size: 0.9vmin;
     }
 }
 @include titanClassWithID($step-section-header) {
