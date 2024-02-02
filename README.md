@@ -15,8 +15,9 @@
 2. copy the generated css in `style.css`
 
 In Titan Project:
---> Project Settings (gear icon on left side)
-   --> Tools
-     --> Custom Styles
-       Paste the css into the content of the custom style and apply
-   
+```
+|--> Project Settings (gear icon on left side)
+   |--> Tools
+      |--> Custom Styles
+         |+++ Paste the css into the content of the custom style and apply
+```
