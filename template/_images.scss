@@ -33,3 +33,28 @@
         @include elementReset;
     }
 }
+
+.ft--#{$submit-icon}--root {
+    @include elementReset;
+    position: absolute !important;
+    z-index: 10;
+    left: 34px !important;
+    width: 30px !important;
+    height: 30px !important;
+    @include mediaQuery(null, 999px) {
+        left: 28px !important;
+    }
+    @include mobile {
+        left: 20px !important;
+    }
+    img {
+        @include elementReset;
+        width: 100%;
+    }
+}
+.ft--#{$small-icon}--root {
+    @include elementReset;
+    img {
+        @include elementReset;
+    }
+}
