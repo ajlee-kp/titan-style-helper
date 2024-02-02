@@ -4,9 +4,9 @@
 2. Preview or publish and inspect the element
 3. Figure out what its' root style id is by checking console
    
-    a. Should be like .ft--<b>e###</b>--root
+    a. Should be like `.ft--e###--root`
    
-5. Add that to <b>_template-ids.scss</b> as a new variable (probably with same name as style in Titan)
+5. Add that to `_template-ids.scss` as a new variable (probably with same name as style in Titan)
 6. Now you can use the `titanClassWithID` mixin to style that element
 
 ## Insert new css into Titan
