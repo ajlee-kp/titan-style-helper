@@ -41,6 +41,22 @@
     left: 34px !important;
     width: 30px !important;
     height: 30px !important;
+    border-radius: 50%;
+    animation: glow infinite 2000ms linear;
+    @keyframes glow {
+        from {
+            box-shadow: 0px 0px 0px #fdd25cc2;
+            filter: brightness(1);
+        }
+        50% {
+            box-shadow: 0px 0px 15px #fdd25cc2;
+            filter: brightness(1.02);
+        }
+        to {
+            box-shadow: 0px 0px 0px #fdd25cc2;
+            filter: brightness(1);
+        }
+    }
     @include mediaQuery(null, 999px) {
         left: 28px !important;
     }
